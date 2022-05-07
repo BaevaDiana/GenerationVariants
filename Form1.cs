@@ -81,6 +81,7 @@ namespace GenerationVariants
                     }
                 }
 
+
                 if (checkBox2.Checked == true)
                 {
                     z++;
