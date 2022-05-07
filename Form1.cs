@@ -322,7 +322,7 @@ namespace GenerationVariants
                         b1 = random.Next(3, 10);//всего инженеров
                         b2 = random.Next(2, b1);//всего женщин
                         b3 = random.Next(2, b1 - 1);//в смене человек
-                        b4 = random.Next(2, b1-b2);//мужчин в смене
+                        b4 = random.Next(2, b1 - b2);//мужчин в смене
                         //while (b4 > b1 - b2) b4 = random.Next(2, b3);
                         string s24 = "" + z + ")На тепловой электростанции " + b1 + " сменных инженеров, из них " + b2 + " женщин. В смену занято " + b3 + " человека. Найти вероятность того, что в случайно выбранную смену окажется " + b4 + " мужчин." + Environment.NewLine;
                         doc.InsertParagraph(s24);
@@ -463,7 +463,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s42);
                         double ans32, ans33;
                         double ll = (double)(a1 * 0.01);
-                        ans32 = (double)(((a3 - (ll * a2))) / (Math.Sqrt((double)(a3 *ll * (1 - ll)))));
+                        ans32 = (double)(((a3 - (ll * a2))) / (Math.Sqrt((double)(a3 * ll * (1 - ll)))));
                         ans33 = (double)(((a3 - (ll * a2))) / (Math.Sqrt((double)(a3 * ll * (1 - ll)))));
                         string s43 = "" + "Задание " + z + " - Ф(" + ans32 + ")-Ф(" + ans33 + ")" + Environment.NewLine;
                         doc2.InsertParagraph(s43);
@@ -488,8 +488,8 @@ namespace GenerationVariants
                         string s46 = "" + z + ")В автопарке имеется " + s1 + " автомобилей. Вероятность безотказной работы каждого из них равна " + s2 + ". С вероятностью " + s3 + " определить границы, в которых будет находиться доля безотказно работавших машин в определенный момент времени." + Environment.NewLine;
                         doc.InsertParagraph(s46);
                         double qq, ww, rr;
-                        qq = s1 * s2;ww = (double)((s3 + 1) / 2);rr = (double)Math.Sqrt((double)(s1 * s2 * (1 - s2)));
-                        string s47 = "" + "Задание " + z + "- " + qq+"-Ф("+ww+")*"+rr+"<=X<="+qq+"+Ф("+ww+")*"+rr+ Environment.NewLine;
+                        qq = s1 * s2; ww = (double)((s3 + 1) / 2); rr = (double)Math.Sqrt((double)(s1 * s2 * (1 - s2)));
+                        string s47 = "" + "Задание " + z + "- " + qq + "-Ф(" + ww + ")*" + rr + "<=X<=" + qq + "+Ф(" + ww + ")*" + rr + Environment.NewLine;
                         doc2.InsertParagraph(s47);
                     }
                     else
@@ -504,8 +504,8 @@ namespace GenerationVariants
                     z++;
                     if (k % 2 != 0)
                     {
-                       //я ее пока еще не делала
-                       //string 50,51 ans 36
+                        //я ее пока еще не делала
+                        //string 50,51 ans 36
                     }
                     else
                     {
@@ -519,14 +519,14 @@ namespace GenerationVariants
                     z++;
                     if (k % 2 != 0)
                     {
-                        double d1;int d2;
-                        d1= Math.Round(random.NextDouble() * 1, 1);
+                        double d1; int d2;
+                        d1 = Math.Round(random.NextDouble() * 1, 1);
                         d2 = random.Next(15, 75);
                         string s54 = "" + z + ")Вероятность получения студентом отличной оценки на экзамене равна " + d1 + ". Найти наивероятнейшее число отличных оценок и вероятность этого числа, если число студентов, сдающих экзамен равно " + d2 + Environment.NewLine;
                         doc.InsertParagraph(s54);
                         double ans38, ans39;
-                        ans38 = d1 * 0.01; ans39 = ans38 - 1;                 
-                        string s55 = "" + "Задание " + z + "- "+ ans39+"<=k0<="+ans38+ Environment.NewLine;
+                        ans38 = d1 * 0.01; ans39 = ans38 - 1;
+                        string s55 = "" + "Задание " + z + "- " + ans39 + "<=k0<=" + ans38 + Environment.NewLine;
                         doc2.InsertParagraph(s55);
                     }
                     else
@@ -546,7 +546,7 @@ namespace GenerationVariants
             Process.Start("WINWORD.EXE", fileName2);
 
         }
- 
+
         private void inputNumberOfVariants_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Count.Text))
@@ -568,5 +568,4 @@ namespace GenerationVariants
     }
 }
 
-    
-        
+
