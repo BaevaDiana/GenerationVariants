@@ -76,7 +76,7 @@ namespace GenerationVariants
                         p2 = random.Next(2, 11);//люди
                         string s4 = "" + z + ")" + p2 + " человек вошли в лифт на 1-м этаже" + " дома с" + " " + h1 + " этажами. Сколькими способами пассажиры могут выйти из лифта на нужных этажах?" + Environment.NewLine;
                         doc.InsertParagraph(s4);
-                        int ans1 = (int)Math.Pow(h1 - 1, p2);
+                        double ans1 = (int)Math.Pow(h1 - 1, p2);
                         string s5 = "" + "Задание " + z + "- " + ans1 + Environment.NewLine;
                         doc2.InsertParagraph(s5);
                     }
@@ -90,9 +90,9 @@ namespace GenerationVariants
                         int m1, w1, h1, m2, h2, w2, g;
                         m1 = random.Next(2, 16);//всего в группе мужчин
                         w1 = random.Next(2, 16);//женшин в группе
-                        g = random.Next(2, m1 + w1);//группа
-                        w2 = random.Next(2, g);//в группе2 женщин
-                        m2 = random.Next(2, g);//в группе2 мужчин
+                        g = random.Next(2, m1 + w1);//группа для ужина
+                        w2 = random.Next(2, w1);//в группе2 женщин
+                        m2 = random.Next(2, m1);//в группе2 мужчин
                         string s5 = "" + z + ")Группа туристов из " + m1 + " юношей и " + w1 + " девушек выбирает по жребию " + g + " человек для приготовления ужина. Сколько существует способов, при которых в эту группу попадут " + w2 + " девушек или " + m2 + " юношей?" + Environment.NewLine;
                         doc.InsertParagraph(s5);
                         double ans5;
@@ -102,10 +102,10 @@ namespace GenerationVariants
                     }
                     else
                     {
-                        int m1, w1, h1, m2, h2, w2, g;
+                        int m1, w1, w2, g;
                         m1 = random.Next(2, 16);//всего деталей
                         w1 = random.Next(2, m1);//бракованные
-                        g = random.Next(2, m1);//комплект
+                        g = random.Next(2, w1);//комплект
                         w2 = random.Next(2, g);//бракованные выпадают
                         string s7 = "" + z + ")В ящике " + m1 + " деталей, среди которых  " + w1 + " бракованных. Наудачу выбирается комплект из  " + g + " деталей. Сколько всего комплектов, в каждом из которых " + w2 + " детали бракованные?" + Environment.NewLine;
                         doc.InsertParagraph(s7);
@@ -205,7 +205,7 @@ namespace GenerationVariants
                         t3 = random.Next(1, (int)t2);
                         string s13 = "" + z + ")В контрольной работе будет " + t1 + " задач – по одной из каждой пройденной темы. Задачи будут взяты из общего списка по " + t2 + " задач в каждой теме, а всего было пройдено " + t1 + " тем. При подготовке к контрольной Вова решил только по " + t3 + " задач в каждой теме. Найдите общее число всех возможных вариантов контрольной работы." + Environment.NewLine;
                         doc.InsertParagraph(s13);
-                        int ans12;
+                        double ans12;
                         ans12 = (int)Math.Pow(t2, t1);
                         string s14 = "" + "Задание " + z + "- " + ans12 + Environment.NewLine;
                         doc2.InsertParagraph(s14);
@@ -321,7 +321,7 @@ namespace GenerationVariants
                         b1 = random.Next(3, 10);//всего инженеров
                         b2 = random.Next(2, b1);//всего женщин
                         b3 = random.Next(2, b1 - 1);//в смене человек
-                        b4 = random.Next(2, b3);//мужчин в смене
+                        b4 = random.Next(2, b1-b2);//мужчин в смене
                         //while (b4 > b1 - b2) b4 = random.Next(2, b3);
                         string s23 = "" + z + ")На тепловой электростанции " + b1 + " сменных инженеров, из них " + b2 + " женщин. В смену занято " + b3 + " человека. Найти вероятность того, что в случайно выбранную смену окажется " + b4 + " мужчин." + Environment.NewLine;
                         doc.InsertParagraph(s23);
