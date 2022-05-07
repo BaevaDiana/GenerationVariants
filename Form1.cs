@@ -35,7 +35,6 @@ namespace GenerationVariants
         {
             return FactorialPlus(n, n - k) / Factorial(k);
         }
-
         private void generateButton_Click(object sender, EventArgs e)
         {
             string fileName = @"C:\Users\Дианочка\source\repos\GenerationVariants\ex.docx";
@@ -356,8 +355,20 @@ namespace GenerationVariants
                     else
                     {
                         //место для задачи партнера-Кристины!
-                        //string s28,29;
-                        //ans 25;
+                        //сделана!!
+                        double v1, v2, v3, v4, v5, v6;
+                        v1 = Math.Round(random.NextDouble() * 1, 1);//брак первого автомата
+                        v2 = Math.Round(random.NextDouble() * 1, 1);//брак 2го автомата
+                        v3 = Math.Round(random.NextDouble() * 1, 1);//брак 3го автомата
+                        v4 = random.Next(500, 4000);//поступает с 1 завода
+                        v5 = random.Next(500, 4000);//поступает со 2 завода
+                        v6 = random.Next(500, 4000);//поступает с 3 завода
+                        string s28 = "" + z + ")На сборку попадают детали с трёх автоматов. Известно, что первый автомат даёт " + v1 + "% брака, второй -" + v2 + "% и третий - " + v3 + "%. Найти вероятность попадания на сборку бракованной детали, если с первого автомата поступило" + v4 + ", со второго " + v5 + ", с третьего " + v6 + "." + Environment.NewLine;
+                        doc.InsertParagraph(s28);
+                        double ans25;
+                        ans25 = (double)(((v4 / (v4 + v5 + v6) * (v1)) + ((v5 / (v4 + v5 + v6)) * v2) + ((v6 / (v4 + v5 + v6)) * v3)));
+                        string s27 = "" + "Задание " + z + " - " + ans25 + Environment.NewLine;
+                        doc2.InsertParagraph(s27);
                     }
                 }
 
@@ -380,6 +391,16 @@ namespace GenerationVariants
                     {
                         //место для задачи партнера-Кристины!
                         //string s32,33 ans 27
+                        double pr1, pr2, pr3;
+                        pr1 = random.Next(1, 95);//семян было обработано
+                        pr2 = Math.Round(random.NextDouble() * 1, 1);//поражение обработанных
+                        pr3 = Math.Round(random.NextDouble() * 1, 1);////поражение необработанных
+                        string s32 = "" + z + ")Перед посевом" + pr1 + "% всех семян было обработано ядохимикатами. Вероятность поражения вредителями для растений из обработанных семян равна " + pr2 + ", для растений из необработанных семян - " + pr3 + ". Взятое наудачу растение оказалось пораженным. Какова вероятность того, что оно выращено из партии обработанных семян?" + Environment.NewLine;
+                        doc.InsertParagraph(s32);
+                        double ans27;
+                        ans27 = (double)(((pr1 / 100) * pr3) / ((pr1 / 100) * pr3 + (1 - (pr1 / 100)) * pr2));
+                        string s33 = "" + "Задание " + z + " - " + ans27 + Environment.NewLine;
+                        doc2.InsertParagraph(s33);
                     }
                 }
 
@@ -435,21 +456,83 @@ namespace GenerationVariants
                     if (k % 2 != 0)
                     {
                         int a1, a2, a3;
-                        a1 = random.Next(10, 100);
-                        a2 = random.Next(1, 100);//всего испытаний
-                        a3 = random.Next(1, a2);//сколько раз
-                        string s42 = "" + z + ")На склад поступают изделия, из которых " + a1 + " % оказываются высшего сорта. Найти вероятность того, что из " + a2 + " взятых наудачу не менее " + a3 + " изделий окажется высшего сорта." + Environment.NewLine;
+                        a1 = random.Next(5, 95);
+                        a2 = random.Next(1, 100);
+                        a3 = random.Next(2, a2);
+                        string s42 = "" + z + ")На склад поступают изделия, из которых " + a1 + " оказываются высшего сорта. Найти вероятность того, что из " + a2 + " взятых наудачу не менее " + a3 + " изделий окажется высшего сорта" + Environment.NewLine;
                         doc.InsertParagraph(s42);
                         double ans32, ans33;
-                        ans32 = (double)((a2 - ((a1 * 0.01) * a2))) / (Math.Sqrt(a2 * (a1 * 0.01) * (1 - a1)));
-                        ans33 = (double)((a3 - ((a1 * 0.01) * a2))) / (Math.Sqrt(a2 * (a1 * 0.01) * (1 - a1)));
+                        double ll = (double)(a1 * 0.01);
+                        ans32 = (double)(((a3 - (ll * a2))) / (Math.Sqrt((double)(a3 *ll * (1 - ll)))));
+                        ans33 = (double)(((a3 - (ll * a2))) / (Math.Sqrt((double)(a3 * ll * (1 - ll)))));
                         string s43 = "" + "Задание " + z + " - Ф(" + ans32 + ")-Ф(" + ans33 + ")" + Environment.NewLine;
                         doc2.InsertParagraph(s43);
                     }
                     else
                     {
                         //место для задачи партнера-Кристины!
-                        //string s44,45 ans 31
+                        //string s44,45 ans 34
+                    }
+                }
+
+
+                if (checkBox14.Checked == true)
+                {
+                    z++;
+                    if (k % 2 != 0)
+                    {
+                        int s1; double s2, s3;
+                        s1 = random.Next(20, 401);
+                        s2 = Math.Round(random.NextDouble() * 1, 1);
+                        s3 = Math.Round(random.NextDouble() * 1, 2);
+                        string s46 = "" + z + ")В автопарке имеется " + s1 + " автомобилей. Вероятность безотказной работы каждого из них равна " + s2 + ". С вероятностью " + s3 + " определить границы, в которых будет находиться доля безотказно работавших машин в определенный момент времени." + Environment.NewLine;
+                        doc.InsertParagraph(s46);
+                        double qq, ww, rr;
+                        qq = s1 * s2;ww = (double)((s3 + 1) / 2);rr = (double)Math.Sqrt((double)(s1 * s2 * (1 - s2)));
+                        string s47 = "" + "Задание " + z + "- " + qq+"-Ф("+ww+")*"+rr+"<=X<="+qq+"+Ф("+ww+")*"+rr+ Environment.NewLine;
+                        doc2.InsertParagraph(s47);
+                    }
+                    else
+                    {
+                        //место для задачи партнера-Кристины!
+                        //string s48,49 ans 35
+                    }
+                }
+
+                if (checkBox15.Checked == true)
+                {
+                    z++;
+                    if (k % 2 != 0)
+                    {
+                       //я ее пока еще не делала
+                       //string 50,51 ans 36
+                    }
+                    else
+                    {
+                        //место для задачи партнера-Кристины!
+                        //string 52,53 ans 37
+                    }
+                }
+
+                if (checkBox16.Checked == true)
+                {
+                    z++;
+                    if (k % 2 != 0)
+                    {
+                        double d1;int d2;
+                        d1= Math.Round(random.NextDouble() * 1, 1);
+                        d2 = random.Next(15, 75);
+                        string s54 = "" + z + ")Вероятность получения студентом отличной оценки на экзамене равна " + d1 + ". Найти наивероятнейшее число отличных оценок и вероятность этого числа, если число студентов, сдающих экзамен равно " + d2 + Environment.NewLine;
+                        doc.InsertParagraph(s54);
+                        double ans38, ans39;
+                        ans38 = d1 * 0.01; ans39 = ans38 - 1;                 
+                        string s55 = "" + "Задание " + z + "- "+ ans39+"<=k0<="+ans38+ Environment.NewLine;
+                        doc2.InsertParagraph(s55);
+                    }
+                    else
+                    {
+                        //место для задачи партнера-Кристины!
+                        //string 56,57 ans 40
                     }
                 }
 
@@ -476,6 +559,11 @@ namespace GenerationVariants
                 varPoint = "1";
                 n = Convert.ToInt32(Count.Text);
             }
+        }
+
+        private void progressBar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -255,6 +255,7 @@ namespace GenerationVariants
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(187, 32);
             this.progressBar.TabIndex = 27;
+            this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
             // 
             // generateButton
             // 
