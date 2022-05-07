@@ -38,8 +38,8 @@ namespace GenerationVariants
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            string fileName = @"C:\Users\Дианочка\source\repos\GenerationVariants\ex.docx";
-            string fileName2 = @"C:\Users\Дианочка\source\repos\GenerationVariants\ans.docx";
+            string fileName = @"C:\Users\Кристина\source\repos\GenerationVariants\ex.docx";
+            string fileName2 = @"C:\Users\Кристина\source\repos\GenerationVariants\ans.docx";
             var doc = DocX.Create(fileName);
             var doc2 = DocX.Create(fileName2);
             int k, z;
@@ -320,8 +320,8 @@ namespace GenerationVariants
                     else
                     {
                         int b1, b2, b3, b4;
-                        b1 = random.Next(3, 10);//всего инженеров
-                        b2 = random.Next(2, b1);//всего женщин
+                        b1 = random.Next(5, 10);//всего инженеров
+                        b2 = random.Next(2, b1-3);//всего женщин
                         b3 = random.Next(2, b1 - 1);//в смене человек
                         b4 = random.Next(2, b1-b2);//мужчин в смене
                         //while (b4 > b1 - b2) b4 = random.Next(2, b3);
@@ -354,10 +354,22 @@ namespace GenerationVariants
                         doc2.InsertParagraph(s27);
                     }
                     else
-                    {
+                    {  
                         //место для задачи партнера-Кристины!
-                        //string s28,29;
-                        //ans 25;
+                        //сделана!!
+                        double v1, v2, v3, v4, v5, v6;
+                        v1 = Math.Round(random.NextDouble() * 1, 1);//брак первого автомата
+                        v2 = Math.Round(random.NextDouble() * 1, 1);//брак 2го автомата
+                        v3 = Math.Round(random.NextDouble() * 1, 1);//брак 3го автомата
+                        v4 = random.Next(500, 4000);//поступает с 1 завода
+                        v5 = random.Next(500, 4000);//поступает со 2 завода
+                        v6 = random.Next(500, 4000);//поступает с 3 завода
+                        string s28 = "" + z + ")На сборку попадают детали с трёх автоматов. Известно, что первый автомат даёт "+ v1+"% брака, второй -"+v2+"% и третий - "+v3+"%. Найти вероятность попадания на сборку бракованной детали, если с первого автомата поступило" +v4+", со второго "+v5+ ", с третьего "+v6+"." + Environment.NewLine;
+                        doc.InsertParagraph(s28);
+                        double ans25;
+                        ans25 = (double)(((v4/(v4+v5+v6) * (v1)) + ((v5 / (v4 + v5 + v6)) * v2) + ((v6 / (v4 + v5 + v6)) * v3)));
+                        string s27 = "" + "Задание " + z + " - " + ans25 + Environment.NewLine;
+                        doc2.InsertParagraph(s27); 
                     }
                 }
 
@@ -380,6 +392,16 @@ namespace GenerationVariants
                     {
                         //место для задачи партнера-Кристины!
                         //string s32,33 ans 27
+                        double pr1,pr2,pr3;
+                        pr1 = random.Next(1, 95);//семян было обработано
+                        pr2 = Math.Round(random.NextDouble() * 1, 1);//поражение обработанных
+                        pr3 = Math.Round(random.NextDouble() * 1, 1);////поражение необработанных
+                        string s32 = "" + z + ")Перед посевом"+pr1+"% всех семян было обработано ядохимикатами. Вероятность поражения вредителями для растений из обработанных семян равна "+pr2+", для растений из необработанных семян - "+pr3+". Взятое наудачу растение оказалось пораженным. Какова вероятность того, что оно выращено из партии обработанных семян?" + Environment.NewLine;
+                        doc.InsertParagraph(s32);
+                        double ans27;
+                        ans27 = (double)(((pr1/100)*pr3)/((pr1/100)*pr3+(1-(pr1/100))*pr2));
+                        string s33 = "" + "Задание " + z + " - " + ans27 + Environment.NewLine;
+                        doc2.InsertParagraph(s33);
                     }
                 }
 
