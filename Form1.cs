@@ -214,7 +214,7 @@ namespace GenerationVariants
                     {
                         int g1; string l;
                         g1 = random.Next(4, 8);
-                        string s15 = "" + z + ")В футбольном турнире участвуют несколько команд. Оказалось, что все они для трусов и футболок использовали  " + g1 + " цветов, причем были представлены все возможные варианты. Сколько команд участвовали в турнире?" + Environment.NewLine;
+                        string s15 = "" + z + ")В футбольном турнире участвуют несколько команд. Оказалось, что все они для трусов и футболок использовали " + g1 + " цветов, причем были представлены все возможные варианты. Сколько команд участвовали в турнире?" + Environment.NewLine;
                         doc.InsertParagraph(s15);
                         int ans13;
                         ans13 = g1 * (g1 - 1);
@@ -305,6 +305,7 @@ namespace GenerationVariants
                     }
                 }
 
+
                 if (checkBox8.Checked == true)
                 {
                     z++;
@@ -313,6 +314,7 @@ namespace GenerationVariants
 
                         string s22 = "" + "Задание доделать!" + Environment.NewLine;
                         doc.InsertParagraph(s22);
+                        //string s23 для ответа и ans 22
 
                     }
                     else
@@ -323,17 +325,86 @@ namespace GenerationVariants
                         b3 = random.Next(2, b1 - 1);//в смене человек
                         b4 = random.Next(2, b1-b2);//мужчин в смене
                         //while (b4 > b1 - b2) b4 = random.Next(2, b3);
-                        string s23 = "" + z + ")На тепловой электростанции " + b1 + " сменных инженеров, из них " + b2 + " женщин. В смену занято " + b3 + " человека. Найти вероятность того, что в случайно выбранную смену окажется " + b4 + " мужчин." + Environment.NewLine;
-                        doc.InsertParagraph(s23);
+                        string s24 = "" + z + ")На тепловой электростанции " + b1 + " сменных инженеров, из них " + b2 + " женщин. В смену занято " + b3 + " человека. Найти вероятность того, что в случайно выбранную смену окажется " + b4 + " мужчин." + Environment.NewLine;
+                        doc.InsertParagraph(s24);
                         double ans23;
                         ans23 = (double)(Combinations(b4, b1 - b2) * Combinations(b3 - b4, b2)) / (Combinations(b3, b1));
-                        string s24 = "" + "Задание " + z + " - " + ans23 + Environment.NewLine;
-                        doc2.InsertParagraph(s24);
+                        string s25 = "" + "Задание " + z + " - " + ans23 + Environment.NewLine;
+                        doc2.InsertParagraph(s25);
                     }
                 }
 
+                if (checkBox9.Checked == true)
+                {
+                    z++;
+                    if (k % 2 != 0)
+                    {
+                        int v1, v2, v3, v4, v5, v6;
+                        v1 = random.Next(1, 100);//продукции с первой фабрики
+                        v2 = random.Next(1, (100 - v1));//продукции со второй фабрики
+                        v3 = random.Next(1, (100 - v1 - v2));//продукции с третьей фабрики
+                        v4 = random.Next(1, 30);//процент нестандартных с первой фабрики
+                        v5 = random.Next(1, v4);//процент нестандартных со второй фабрики
+                        v6 = random.Next(1, v5);//процент нестандартных с третьей фабрики
+                        string s26 = "" + z + ")На склад поступает продукция трёх фабрик. Причём продукция первой фабрики составляет " + v1 + " %, второй - " + v2 + " % и третьей - " + v3 + " %. Известно также, что средний процент нестандартных изделий для первой фабрики равен " + v4 + " %; для второй - " + v5 + " % и для третьей - " + v6 + " %. Найти вероятность того, что наудачу взятое изделие оказалось нестандартным" + Environment.NewLine;
+                        doc.InsertParagraph(s26);
+                        double ans24;
+                        ans24 = (double)((v1 * 0.01) * (v4 * 0.01) + (v2 * 0.01) * (v5 * 0.01) + (v3 * 0.01) * (v6 * 0.01));
+                        string s27 = "" + "Задание " + z + " - " + ans24 + Environment.NewLine;
+                        doc2.InsertParagraph(s27);
+                    }
+                    else
+                    {
+                        //место для задачи партнера-Кристины!
+                        //string s28,29;
+                        //ans 25;
+                    }
+                }
 
+                if (checkBox10.Checked == true)
+                {
+                    z++;
+                    if (k % 2 != 0)
+                    {
+                        int t1, t2;
+                        t1 = random.Next(1, 100);//детали первого автомата
+                        t2 = random.Next(1, 100);//детали второго автомата
+                        string s30 = "" + z + ")Два автомата производят одинаковые детали, которые сбрасываются на общий конвейер. Производительность первого автомата вдвое больше производительности второго. Первый автомат производит в среднем "+t1+" % деталей отличного качества, а второй - "+t2+" %. Наудачу взятая с конвейера деталь оказалась отличного качества. Найти вероятность того, что эта деталь произведена первым автоматом." + Environment.NewLine;
+                        doc.InsertParagraph(s30);
+                        double ans26;
+                        ans26 = (double)(0.66666* (t1 * 0.01)) / (0.66666 * (t1 * 0.01) + 0.33333 * (t2 * 0.01));
+                        string s31 = "" + "Задание " + z + " - " + ans26 + Environment.NewLine;
+                        doc2.InsertParagraph(s31);
+                    }
+                    else
+                    {
+                        //место для задачи партнера-Кристины!
+                        //string s32,33 ans 27
+                    }
+                }
 
+                if (checkBox11.Checked == true)
+                {
+                    z++;
+                    if (k % 2 != 0)
+                    {
+                        int y2, y3; double y1;
+                        y1 = Math.Round(random.NextDouble() * 1, 1);
+                        y2 = random.Next(1, 10);
+                        y3 = random.Next(1, y2);
+                        string s34 = "" + z + ")При каждом выстреле из орудия вероятность попадания в цель равна " + y1 + ". Найти вероятность того, что при " + y2 + " выстрелах будет " + y3 + " выстрел мимо." + Environment.NewLine;
+                        doc.InsertParagraph(s34);
+                        double ans28;
+                        ans28 = Combinations(y2 - y3, y2) * (double)Math.Pow(y1, y2 - y3) * (double)Math.Pow(1 - y1, y3);
+                        string s35 = "" + "Задание " + z + " - " + ans28 + Environment.NewLine;
+                        doc2.InsertParagraph(s35);
+                    }
+                    else
+                    {
+                        //место для задачи партнера-Кристины!
+                        //string s32,33 ans 27
+                    }
+                }
 
 
 
@@ -355,10 +426,6 @@ namespace GenerationVariants
             
         }
  
-
-
-
-
         private void inputNumberOfVariants_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Count.Text))
