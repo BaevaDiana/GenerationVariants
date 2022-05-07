@@ -390,13 +390,12 @@ namespace GenerationVariants
                     }
                     else
                     {
-                        //место для задачи партнера-Кристины!
-                        //string s32,33 ans 27
+                        //задача сделана
                         double pr1,pr2,pr3;
                         pr1 = random.Next(1, 95);//семян было обработано
                         pr2 = Math.Round(random.NextDouble() * 1, 1);//поражение обработанных
                         pr3 = Math.Round(random.NextDouble() * 1, 1);////поражение необработанных
-                        string s32 = "" + z + ")Перед посевом"+pr1+"% всех семян было обработано ядохимикатами. Вероятность поражения вредителями для растений из обработанных семян равна "+pr2+", для растений из необработанных семян - "+pr3+". Взятое наудачу растение оказалось пораженным. Какова вероятность того, что оно выращено из партии обработанных семян?" + Environment.NewLine;
+                        string s32 = "" + z + ")Перед посевом "+pr1+"% всех семян было обработано ядохимикатами. Вероятность поражения вредителями для растений из обработанных семян равна "+pr2+", для растений из необработанных семян - "+pr3+". Взятое наудачу растение оказалось пораженным. Какова вероятность того, что оно выращено из партии обработанных семян?" + Environment.NewLine;
                         doc.InsertParagraph(s32);
                         double ans27;
                         ans27 = (double)(((pr1/100)*pr3)/((pr1/100)*pr3+(1-(pr1/100))*pr2));
@@ -424,7 +423,17 @@ namespace GenerationVariants
                     else
                     {
                         //место для задачи партнера-Кристины!
-                        //string s32,33 ans 27
+                        //Диана привет!!Задачка готова!! ясно С# не умеет считать дроби фу
+                         double kos1,kos2,kos;
+                        kos = random.Next(2,7);
+                        kos1 = random.Next(1, 7);
+                        kos2 = random.Next(1, (int)kos);
+                        string s36 = "" + z + ")Найти вероятность того, что при "+kos+" подбрасываниях игральной кости "+kos1+" очков появится "+kos2+ " раз(а)." + Environment.NewLine;
+                        doc.InsertParagraph(s36);
+                        double ans29;
+                        ans29 = Combinations((int)kos2,(int)kos) * (double)Math.Pow(0.17,kos2) * (double)Math.Pow(0.83,kos-kos2);
+                        string s37 = "" + "Задание " + z + " - " + ans29 + Environment.NewLine;
+                        doc2.InsertParagraph(s37);
                     }
                 }
                 if (checkBox12.Checked == true)
@@ -433,21 +442,33 @@ namespace GenerationVariants
                     if (k % 2 != 0)
                     {
                         int u2, u3; double u1;
-                        u1 = Math.Round(random.NextDouble() * 1, 1);
-                        u2 = random.Next(1, 150);//всего испытаний
+                        u1 = Math.Round(random.NextDouble() * 0.9, 1);
+                        if (u1 == 0) u1 += 0.1;
+                        u2 = random.Next(1, 100);//всего испытаний
                         u3 = random.Next(1, u2);//сколько раз
                         string s38 = "" + z + ")Вероятность наступления события в каждом из одинаковых и независимых испытаний равна " + u1 + ".Найти вероятность того, что в " + u2 + " испытаниях событие наступит " + u3 + " раз." + Environment.NewLine;
                         doc.InsertParagraph(s38);
                         double ans30;
-                        double vx = (double)((u3 - (u2 * u1)) / (Math.Sqrt(u2 * u1 * (1 - u1))));
-                        ans30 = ((double)Math.Sqrt(u2 * u1 * (1 - u1)));
-                        string s39 = "" + "Задание " + z + " - ф(" + vx + ")/" + ans30 + Environment.NewLine;
+                        double vx = (double)((u3 - (u2 * u1)) /(double) (Math.Sqrt(u2 * u1 * (1 - u1))));
+                        ans30 = 1/((double)Math.Sqrt(u2 * u1 * (1 - u1)));
+                        string s39 = "" + "Задание " + z + " - ф(" + vx + ")" + ans30 + Environment.NewLine;
                         doc2.InsertParagraph(s39);
                     }
                     else
                     {
-                        //место для задачи партнера-Кристины!
-                        //string s40,41 ans 31
+                        //Диана у меня перемнных ховут вера....
+                        double vera1, vera2, vera3;
+                        vera1 = Math.Round(random.NextDouble() * 0.9, 1);
+                        if (vera1 == 0) vera1 += 0.1;
+                        vera2 = random.Next(1, 100);//всего выстрелов
+                        vera3 = random.Next(1,(int) vera2);//сколько раз
+                        string s40 = "" + z + ")Вероятность поражения мишени при одном выстреле равна "+vera1+". Найти вероятность того, что при "+vera2+" выстрелах мишень будет поражена "+vera3+" раз." + Environment.NewLine;
+                        doc.InsertParagraph(s40);
+                        double ans31;
+                        double vx = (double)((vera3 - (vera1 * vera2)) / (double)(Math.Sqrt(vera2 * vera1 * (1 - vera1))));
+                        ans31 = 1/((double)Math.Sqrt(vera2 * vera1 * (1 - vera1)));
+                        string s41 = "" + "Задание " + z + " - ф(" + vx + ")*" + ans31 + Environment.NewLine;
+                        doc2.InsertParagraph(s41);
                     }
                 }
 
@@ -471,7 +492,8 @@ namespace GenerationVariants
                     else
                     {
                         //место для задачи партнера-Кристины!
-                        //string s44,45 ans 31
+                        //string s44,45 ans 31  передаю потвеь диане!!!!!!
+                        
                     }
                 }
 
