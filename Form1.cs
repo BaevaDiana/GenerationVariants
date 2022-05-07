@@ -381,10 +381,10 @@ namespace GenerationVariants
                         int t1, t2;
                         t1 = random.Next(1, 100);//детали первого автомата
                         t2 = random.Next(1, 100);//детали второго автомата
-                        string s30 = "" + z + ")Два автомата производят одинаковые детали, которые сбрасываются на общий конвейер. Производительность первого автомата вдвое больше производительности второго. Первый автомат производит в среднем "+t1+" % деталей отличного качества, а второй - "+t2+" %. Наудачу взятая с конвейера деталь оказалась отличного качества. Найти вероятность того, что эта деталь произведена первым автоматом." + Environment.NewLine;
+                        string s30 = "" + z + ")Два автомата производят одинаковые детали, которые сбрасываются на общий конвейер. Производительность первого автомата вдвое больше производительности второго. Первый автомат производит в среднем " + t1 + " % деталей отличного качества, а второй - " + t2 + " %. Наудачу взятая с конвейера деталь оказалась отличного качества. Найти вероятность того, что эта деталь произведена первым автоматом." + Environment.NewLine;
                         doc.InsertParagraph(s30);
                         double ans26;
-                        ans26 = (double)(0.66666* (t1 * 0.01)) / (0.66666 * (t1 * 0.01) + 0.33333 * (t2 * 0.01));
+                        ans26 = (double)(0.66666 * (t1 * 0.01)) / (0.66666 * (t1 * 0.01) + 0.33333 * (t2 * 0.01));
                         string s31 = "" + "Задание " + z + " - " + ans26 + Environment.NewLine;
                         doc2.InsertParagraph(s31);
                     }
@@ -427,25 +427,63 @@ namespace GenerationVariants
                         //string s32,33 ans 27
                     }
                 }
+                if (checkBox12.Checked == true)
+                {
+                    z++;
+                    if (k % 2 != 0)
+                    {
+                        int u2, u3; double u1;
+                        u1 = Math.Round(random.NextDouble() * 1, 1);
+                        u2 = random.Next(1, 150);//всего испытаний
+                        u3 = random.Next(1, u2);//сколько раз
+                        string s38 = "" + z + ")Вероятность наступления события в каждом из одинаковых и независимых испытаний равна " + u1 + ".Найти вероятность того, что в " + u2 + " испытаниях событие наступит " + u3 + " раз." + Environment.NewLine;
+                        doc.InsertParagraph(s38);
+                        double ans30;
+                        double vx = (double)((u3 - (u2 * u1)) / (Math.Sqrt(u2 * u1 * (1 - u1))));
+                        ans30 = ((double)Math.Sqrt(u2 * u1 * (1 - u1)));
+                        string s39 = "" + "Задание " + z + " - ф(" + vx + ")/" + ans30 + Environment.NewLine;
+                        doc2.InsertParagraph(s39);
+                    }
+                    else
+                    {
+                        //место для задачи партнера-Кристины!
+                        //string s40,41 ans 31
+                    }
+                }
 
+                if (checkBox13.Checked == true)
+                {
+                    z++;
+                    if (k % 2 != 0)
+                    {
+                        int a1, a2, a3;
+                        a1 = random.Next(10, 100);
+                        a2 = random.Next(1, 100);//всего испытаний
+                        a3 = random.Next(1, a2);//сколько раз
+                        string s42 = "" + z + ")На склад поступают изделия, из которых " + a1 + " % оказываются высшего сорта. Найти вероятность того, что из " + a2 + " взятых наудачу не менее " + a3 + " изделий окажется высшего сорта." + Environment.NewLine;
+                        doc.InsertParagraph(s42);
+                        double ans32, ans33;
+                        ans32 = (double)((a2 - ((a1 * 0.01) * a2))) / (Math.Sqrt(a2 * (a1 * 0.01) * (1 - a1)));
+                        ans33 = (double)((a3 - ((a1 * 0.01) * a2))) / (Math.Sqrt(a2 * (a1 * 0.01) * (1 - a1)));
+                        string s43 = "" + "Задание " + z + " - Ф(" + ans32 + ")-Ф(" + ans33 + ")" + Environment.NewLine;
+                        doc2.InsertParagraph(s43);
+                    }
+                    else
+                    {
+                        //место для задачи партнера-Кристины!
+                        //string s44,45 ans 31
+                    }
+                }
 
-
-
-
-
-
-
-
-
-
-
+                //Xceed.Document.NET.Paragraph par = doc.InsertParagraph("Таблица Гаусса:");
+                //par.AppendPicture(p);
 
             }
             doc.Save();
-                doc2.Save();
-                Process.Start("WINWORD.EXE", fileName);
-                Process.Start("WINWORD.EXE", fileName2);
-            
+            doc2.Save();
+            Process.Start("WINWORD.EXE", fileName);
+            Process.Start("WINWORD.EXE", fileName2);
+
         }
  
         private void inputNumberOfVariants_TextChanged(object sender, EventArgs e)
