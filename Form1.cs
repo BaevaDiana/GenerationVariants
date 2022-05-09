@@ -311,9 +311,9 @@ namespace GenerationVariants
                     if (k % 2 != 0)
                     {
                         int f1, f2, f3;
-                        f1 = random.Next(10, 80);//вероятность
-                        f2 = random.Next(2, 20);//всего
-                        f3 = random.Next(2, 5);//сколько
+                        f1 = random.Next(10, 76);//вероятность
+                        f2 = random.Next(2, 10);//всего
+                        f3 = random.Next(2, f2);//сколько
                         double ff = f1 * 0.01;double ffff3 = Convert.ToDouble(f3);double raz = Convert.ToDouble(f2 - f3);double raz1 = Convert.ToDouble(1 - ff);
                         string s22 = "" +z+")" +f1 + " % деталей перед поступлением на сборку проходят термическую обработку. Найти вероятность того, что из " + f2 + " поступающих на сборку деталей; " + f3+" были термически обработаны." + Environment.NewLine;
                         doc.InsertParagraph(s22);
