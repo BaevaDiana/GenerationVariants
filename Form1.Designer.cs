@@ -47,8 +47,6 @@ namespace GenerationVariants
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.generateButton = new System.Windows.Forms.Button();
             this.Count = new System.Windows.Forms.TextBox();
             this.textNumberOfVariants = new System.Windows.Forms.TextBox();
@@ -57,25 +55,26 @@ namespace GenerationVariants
             // checkBox17
             // 
             this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(443, 218);
+            this.checkBox17.Location = new System.Drawing.Point(468, 218);
             this.checkBox17.Name = "checkBox17";
             this.checkBox17.Size = new System.Drawing.Size(214, 21);
             this.checkBox17.TabIndex = 46;
             this.checkBox17.Text = "Сгенерировать все задания";
             this.checkBox17.UseVisualStyleBackColor = true;
+            this.checkBox17.CheckedChanged += new System.EventHandler(this.checkBox17_CheckedChanged);
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.Lavender;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(6, 167);
+            this.textBox1.Location = new System.Drawing.Point(6, 146);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(219, 30);
             this.textBox1.TabIndex = 45;
-            this.textBox1.Text = "Выбрать задание:";
+            this.textBox1.Text = "         Выбрать задание:";
             // 
             // checkBox16
             // 
@@ -237,30 +236,10 @@ namespace GenerationVariants
             this.checkBox1.Text = "1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.Lavender;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 97);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox1.Size = new System.Drawing.Size(130, 32);
-            this.richTextBox1.TabIndex = 28;
-            this.richTextBox1.Text = "Выполнение:";
-            // 
-            // progressBar
-            // 
-            this.progressBar.Location = new System.Drawing.Point(155, 97);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(187, 32);
-            this.progressBar.TabIndex = 27;
-            this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
-            // 
             // generateButton
             // 
             this.generateButton.BackColor = System.Drawing.Color.LightBlue;
-            this.generateButton.Location = new System.Drawing.Point(11, 44);
+            this.generateButton.Location = new System.Drawing.Point(49, 60);
             this.generateButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(319, 53);
@@ -272,12 +251,12 @@ namespace GenerationVariants
             // Count
             // 
             this.Count.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Count.Location = new System.Drawing.Point(213, 11);
+            this.Count.Location = new System.Drawing.Point(225, 13);
             this.Count.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Count.MaxLength = 3;
             this.Count.Multiline = true;
             this.Count.Name = "Count";
-            this.Count.Size = new System.Drawing.Size(117, 30);
+            this.Count.Size = new System.Drawing.Size(154, 30);
             this.Count.TabIndex = 24;
             this.Count.TextChanged += new System.EventHandler(this.inputNumberOfVariants_TextChanged);
             // 
@@ -290,9 +269,9 @@ namespace GenerationVariants
             this.textNumberOfVariants.Multiline = true;
             this.textNumberOfVariants.Name = "textNumberOfVariants";
             this.textNumberOfVariants.ReadOnly = true;
-            this.textNumberOfVariants.Size = new System.Drawing.Size(195, 29);
+            this.textNumberOfVariants.Size = new System.Drawing.Size(193, 39);
             this.textNumberOfVariants.TabIndex = 25;
-            this.textNumberOfVariants.Text = "Количество вариантов:";
+            this.textNumberOfVariants.Text = "       Количество вариантов:";
             // 
             // Form1
             // 
@@ -317,8 +296,6 @@ namespace GenerationVariants
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.Count);
             this.Controls.Add(this.textNumberOfVariants);
@@ -348,8 +325,6 @@ namespace GenerationVariants
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.TextBox Count;
         private System.Windows.Forms.TextBox textNumberOfVariants;
