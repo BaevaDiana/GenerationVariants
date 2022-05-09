@@ -311,9 +311,9 @@ namespace GenerationVariants
                     if (k % 2 != 0)
                     {
                         int f1, f2, f3;
-                        f1 = random.Next(1, 100);//вероятность
-                        f2 = random.Next(1, 20);//всего
-                        f3 = random.Next(1, f2);//сколько
+                        f1 = random.Next(10, 80);//вероятность
+                        f2 = random.Next(2, 20);//всего
+                        f3 = random.Next(2, 5);//сколько
                         double ff = f1 * 0.01;double ffff3 = Convert.ToDouble(f3);double raz = Convert.ToDouble(f2 - f3);double raz1 = Convert.ToDouble(1 - ff);
                         string s22 = "" +z+")" +f1 + " % деталей перед поступлением на сборку проходят термическую обработку. Найти вероятность того, что из " + f2 + " поступающих на сборку деталей; " + f3+" были термически обработаны." + Environment.NewLine;
                         doc.InsertParagraph(s22);
@@ -324,19 +324,18 @@ namespace GenerationVariants
                     }
                     else
                     {
-                        /*int b1, b2, b3, b4;
-                        b1 = random.Next(3, 10);//всего инженеров
-                        b2 = random.Next(2, b1);//всего женщин
+                        int b1, b2, b3, b4;
+                        b1 = random.Next(5, 15);//всего инженеров
+                        b2 = random.Next(2, b1 - 3);//всего женщин
                         b3 = random.Next(2, b1 - 1);//в смене человек
                         b4 = random.Next(2, b1 - b2);//мужчин в смене
                         //while (b4 > b1 - b2) b4 = random.Next(2, b3);
-                        string s24 = "" + z + ")На тепловой электростанции " + b1 + " сменных инженеров, из них " + b2 + " женщин. В смену занято " + b3 + " человек(-а). Найти вероятность того, что в случайно выбранную смену окажется " + b4 + " мужчин." + Environment.NewLine;
+                        string s24 = "" + z + ")На тепловой электростанции " + b1 + " сменных инженеров, из них " + b2 + " женщин. В смену занято " + b3 + " человека. Найти вероятность того, что в случайно выбранную смену окажется " + b4 + " мужчин." + Environment.NewLine;
                         doc.InsertParagraph(s24);
                         double ans23;
                         ans23 = (double)(Combinations(b4, b1 - b2) * Combinations(b3 - b4, b2)) / (Combinations(b3, b1));
                         string s25 = "" + "Задание " + z + " - " + ans23 + Environment.NewLine;
                         doc2.InsertParagraph(s25);
-                        */
                     }
                 }
 
@@ -502,6 +501,19 @@ namespace GenerationVariants
                     {
                         //место для задачи партнера-Кристины!
                         //string s44,45 ans 34
+                        int a1, a2, a3, a4;
+                        a1 = random.Next(5, 95);//p
+                        a2 = random.Next(700, 1500);//n
+                        a3 = random.Next(200, a2 - 100);//a
+                        a4 = random.Next(a3 + 1, a2);//b
+                        string s44 = "" + z + ")Всхожесть семян составляет " + a1 + "%. Какова вероятность того. Что из " + a2 + " посеянных семян взойдут от " + a3 + " до " + a4 + "?" + Environment.NewLine;
+                        doc.InsertParagraph(s44);
+                        double ans34, ans35;
+                        double ll = (double)(a1 * 0.01);
+                        ans34 = (double)(((a3 - (ll * a2))) / (double)(Math.Sqrt((double)(a2 * ll * (1 - ll)))));
+                        ans35 = (double)(((a4 - (ll * a2))) / (double)(Math.Sqrt((double)(a2 * ll * (1 - ll)))));
+                        string s45 = "" + "Задание " + z + " - Ф(" + ans34 + ")-Ф(" + ans35 + ")" + Environment.NewLine;
+                        doc2.InsertParagraph(s45);
                     }
                 }
 
