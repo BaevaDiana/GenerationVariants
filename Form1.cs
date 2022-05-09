@@ -311,20 +311,20 @@ namespace GenerationVariants
                     if (k % 2 != 0)
                     {
                         int f1, f2, f3;
-                        f1 = random.Next(10, 100);//вероятность
-                        f2 = random.Next(10, 50);//всего
-                        f3 = random.Next(10, f2);//сколько
-                        double ff = f1 * 0.01;
+                        f1 = random.Next(1, 100);//вероятность
+                        f2 = random.Next(1, 20);//всего
+                        f3 = random.Next(1, f2);//сколько
+                        double ff = f1 * 0.01;double ffff3 = Convert.ToDouble(f3);double raz = Convert.ToDouble(f2 - f3);double raz1 = Convert.ToDouble(1 - ff);
                         string s22 = "" +z+")" +f1 + " % деталей перед поступлением на сборку проходят термическую обработку. Найти вероятность того, что из " + f2 + " поступающих на сборку деталей; " + f3+" были термически обработаны." + Environment.NewLine;
                         doc.InsertParagraph(s22);
                         double ans22;
-                        //ans22 = (double)(Combinations(b4, b1 - b2) * Combinations(b3 - b4, b2)) / (Combinations(b3, b1));
-                        //string s23 = "" + "Задание " + z + " - " + ans22 + Environment.NewLine;
-                        //doc2.InsertParagraph(s23);
+                        ans22 = Combinations(f3, f2) * (double)Math.Pow(ff, ffff3) * (double)Math.Pow(raz1, raz);
+                        string s23 = "" + "Задание " + z + " - " + ans22 + Environment.NewLine;
+                        doc2.InsertParagraph(s23);
                     }
                     else
                     {
-                        int b1, b2, b3, b4;
+                        /*int b1, b2, b3, b4;
                         b1 = random.Next(3, 10);//всего инженеров
                         b2 = random.Next(2, b1);//всего женщин
                         b3 = random.Next(2, b1 - 1);//в смене человек
@@ -336,6 +336,7 @@ namespace GenerationVariants
                         ans23 = (double)(Combinations(b4, b1 - b2) * Combinations(b3 - b4, b2)) / (Combinations(b3, b1));
                         string s25 = "" + "Задание " + z + " - " + ans23 + Environment.NewLine;
                         doc2.InsertParagraph(s25);
+                        */
                     }
                 }
 
@@ -562,16 +563,16 @@ namespace GenerationVariants
                     {
                         //место для задачи партнера-Кристины!
                         //string 52,53 ans 37
-                        int v1, v3; double v2;
-                        v1 = random.Next(10, 500);//всего
-                        v3 = random.Next(1, 11);//отбираются
-                        v2 = Math.Round(random.NextDouble() * 1, 3);//вероятность
-                        string s52 = "" + z + ")Вероятность того, что человек в период страхования будет травмирован, равна " + v2 + ". Компанией застраховано " + v1 + " человек. Какова вероятность того, что травму получат " + v3 + " человек?" + Environment.NewLine;
+                        int vv1, vv3; double vv2;
+                        vv1 = random.Next(10, 500);//всего
+                        vv3 = random.Next(1, 11);//отбираются
+                        vv2 = Math.Round(random.NextDouble() * 1, 3);//вероятность
+                        string s52 = "" + z + ")Вероятность того, что человек в период страхования будет травмирован, равна " + vv2 + ". Компанией застраховано " + vv1 + " человек. Какова вероятность того, что травму получат " + vv3 + " человек?" + Environment.NewLine;
                         doc.InsertParagraph(s52);
-                        double lam2 = Convert.ToDouble(v1 * v2);
-                        double xx32 = Convert.ToDouble(v3);
+                        double lam2 = Convert.ToDouble(vv1 * vv2);
+                        double xx32 = Convert.ToDouble(vv3);
                         double stepen = Math.Pow(lam2, xx32);
-                        int mfact2 = Factorial(v3);
+                        int mfact2 = Factorial(vv3);
                         string s53 = "" + "Задание " + z + "- " + " ( " + stepen + " *e^(-" + lam2 + "))/" + mfact2 + Environment.NewLine;
                         doc2.InsertParagraph(s53);
                     }
