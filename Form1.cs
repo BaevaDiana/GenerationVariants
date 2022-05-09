@@ -73,7 +73,7 @@ namespace GenerationVariants
                         double h1, p2;
                         h1 = random.Next(2, 17);//этажи
                         p2 = random.Next(2, 11);//люди
-                        string s4 = "" + z + ")" + p2 + " человек вошли в лифт на 1-м этаже" + " дома с" + " " + h1 + " этажами. Сколькими способами пассажиры могут выйти из лифта на нужных этажах?" + Environment.NewLine;
+                        string s4 = "" + z + ")" + p2 + " человек(-a) вошли в лифт на 1-м этаже" + " дома с" + " " + h1 + " этажами. Сколькими способами пассажиры могут выйти из лифта на нужных этажах?" + Environment.NewLine;
                         doc.InsertParagraph(s4);
                         double ans1 = (int)Math.Pow(h1 - 1, p2);
                         string s5 = "" + "Задание " + z + "- " + ans1 + Environment.NewLine;
@@ -86,13 +86,13 @@ namespace GenerationVariants
                     z++;
                     if (k % 2 != 0)
                     {
-                        int m1, w1, h1, m2, h2, w2, g;
+                        int m1, w1, m2, w2, g;
                         m1 = random.Next(2, 16);//всего в группе мужчин
                         w1 = random.Next(2, 16);//женшин в группе
                         g = random.Next(2, m1 + w1);//группа для ужина
                         w2 = random.Next(2, w1);//в группе2 женщин
                         m2 = random.Next(2, m1);//в группе2 мужчин
-                        string s5 = "" + z + ")Группа туристов из " + m1 + " юношей и " + w1 + " девушек выбирает по жребию " + g + " человек для приготовления ужина. Сколько существует способов, при которых в эту группу попадут " + w2 + " девушек или " + m2 + " юношей?" + Environment.NewLine;
+                        string s5 = "" + z + ")Группа туристов из " + m1 + " юношей и " + w1 + " девушек выбирает по жребию " + g + " человек(-a) для приготовления ужина. Сколько существует способов, при которых в эту группу попадут " + w2 + " девушек или " + m2 + " юношей?" + Environment.NewLine;
                         doc.InsertParagraph(s5);
                         double ans5;
                         ans5 = Combinations(w2, w1) + Combinations(m2, m1);
@@ -106,7 +106,7 @@ namespace GenerationVariants
                         w1 = random.Next(2, m1);//бракованные
                         g = random.Next(2, w1);//комплект
                         w2 = random.Next(2, g);//бракованные выпадают
-                        string s7 = "" + z + ")В ящике " + m1 + " деталей, среди которых  " + w1 + " бракованных. Наудачу выбирается комплект из  " + g + " деталей. Сколько всего комплектов, в каждом из которых " + w2 + " детали бракованные?" + Environment.NewLine;
+                        string s7 = "" + z + ")В ящике " + m1 + " детали(-ей), среди которых  " + w1 + " бракованных. Наудачу выбирается комплект из  " + g + " деталей. Сколько всего комплектов, в каждом из которых " + w2 + " детали(-ей) бракованные(-ых)?" + Environment.NewLine;
                         doc.InsertParagraph(s7);
                         double ans9;
                         ans9 = Combinations(w2, w1) * Combinations(g - w2, m1 - w1);
@@ -202,7 +202,7 @@ namespace GenerationVariants
                         t1 = random.Next(3, 6);
                         t2 = random.Next(3, 10);
                         t3 = random.Next(1, (int)t2);
-                        string s13 = "" + z + ")В контрольной работе будет " + t1 + " задач – по одной из каждой пройденной темы. Задачи будут взяты из общего списка по " + t2 + " задач в каждой теме, а всего было пройдено " + t1 + " тем. При подготовке к контрольной Вова решил только по " + t3 + " задач в каждой теме. Найдите общее число всех возможных вариантов контрольной работы." + Environment.NewLine;
+                        string s13 = "" + z + ")В контрольной работе будет " + t1 + " задач(-и) – по одной из каждой пройденной темы. Задачи будут взяты из общего списка по " + t2 + " задач(-и) в каждой теме, а всего было пройдено " + t1 + " тем(-ы). При подготовке к контрольной Вова решил только по " + t3 + " задач(-е) в каждой теме. Найдите общее число всех возможных вариантов контрольной работы." + Environment.NewLine;
                         doc.InsertParagraph(s13);
                         double ans12;
                         ans12 = (int)Math.Pow(t2, t1);
@@ -211,9 +211,9 @@ namespace GenerationVariants
                     }
                     else
                     {
-                        int g1; string l;
+                        int g1;
                         g1 = random.Next(4, 8);
-                        string s15 = "" + z + ")В футбольном турнире участвуют несколько команд. Оказалось, что все они для трусов и футболок использовали " + g1 + " цветов, причем были представлены все возможные варианты. Сколько команд участвовали в турнире?" + Environment.NewLine;
+                        string s15 = "" + z + ")В футбольном турнире участвуют несколько команд. Оказалось, что все они для трусов и футболок использовали " + g1 + " цвета(-ов), причем были представлены все возможные варианты. Сколько команд участвовали в турнире?" + Environment.NewLine;
                         doc.InsertParagraph(s15);
                         int ans13;
                         ans13 = g1 * (g1 - 1);
@@ -277,7 +277,7 @@ namespace GenerationVariants
                         double p1, p2;
                         p1 = Math.Round(random.NextDouble() * 1, 1);
                         p2 = Math.Round(random.NextDouble() * 1, 1);
-                        string s20 = "" + z + ")Два студента ищут нужную им книгу в букинистических магазинах. Вероятность того, что книга будет найдена первым студентом, равна " + p1 + ", а вторым " + p2 + ". Какова вероятность того, что: а) только один из студентов найдет книгу; б) оба студента найдут книгу; в) хотя бы один студент найдет книгу. " + Environment.NewLine;
+                        string s20 = "" + z + ")Два студента ищут нужную им книгу в букинистических магазинах. Вероятность того, что книга будет найдена первым студентом, равна " + p1 + ", а вторым " + p2 + ". Какова вероятность того, что: а) только один из студентов найдет книгу; б) оба студента найдут книгу; в) хотя бы один студент найдет книгу? " + Environment.NewLine;
                         doc.InsertParagraph(s20);
                         double ans16, ans17, ans18;
                         ans16 = p1 * (1 - p2) + p2 * (1 - p1);
@@ -310,11 +310,17 @@ namespace GenerationVariants
                     z++;
                     if (k % 2 != 0)
                     {
-
-                        string s22 = "" + "Задание доделать!" + Environment.NewLine;
+                        int f1, f2, f3;
+                        f1 = random.Next(10, 100);//вероятность
+                        f2 = random.Next(10, 50);//всего
+                        f3 = random.Next(10, f2);//сколько
+                        double ff = f1 * 0.01;
+                        string s22 = "" +z+")" +f1 + " % деталей перед поступлением на сборку проходят термическую обработку. Найти вероятность того, что из " + f2 + " поступающих на сборку деталей; " + f3+" были термически обработаны." + Environment.NewLine;
                         doc.InsertParagraph(s22);
-                        //string s23 для ответа и ans 22
-
+                        double ans22;
+                        ans22 = Combinations(f2 - f3, f2) * (double)Math.Pow(ff, f2 - f3) * (double)Math.Pow(1 - ff, f3);
+                        string s23 = "" + "Задание " + z + " - " + ans22 + Environment.NewLine;
+                        doc2.InsertParagraph(s23);
                     }
                     else
                     {
@@ -324,7 +330,7 @@ namespace GenerationVariants
                         b3 = random.Next(2, b1 - 1);//в смене человек
                         b4 = random.Next(2, b1 - b2);//мужчин в смене
                         //while (b4 > b1 - b2) b4 = random.Next(2, b3);
-                        string s24 = "" + z + ")На тепловой электростанции " + b1 + " сменных инженеров, из них " + b2 + " женщин. В смену занято " + b3 + " человека. Найти вероятность того, что в случайно выбранную смену окажется " + b4 + " мужчин." + Environment.NewLine;
+                        string s24 = "" + z + ")На тепловой электростанции " + b1 + " сменных инженеров, из них " + b2 + " женщин. В смену занято " + b3 + " человек(-а). Найти вероятность того, что в случайно выбранную смену окажется " + b4 + " мужчин." + Environment.NewLine;
                         doc.InsertParagraph(s24);
                         double ans23;
                         ans23 = (double)(Combinations(b4, b1 - b2) * Combinations(b3 - b4, b2)) / (Combinations(b3, b1));
@@ -345,7 +351,7 @@ namespace GenerationVariants
                         v4 = random.Next(1, 30);//процент нестандартных с первой фабрики
                         v5 = random.Next(1, v4);//процент нестандартных со второй фабрики
                         v6 = random.Next(1, v5);//процент нестандартных с третьей фабрики
-                        string s26 = "" + z + ")На склад поступает продукция трёх фабрик. Причём продукция первой фабрики составляет " + v1 + " %, второй - " + v2 + " % и третьей - " + v3 + " %. Известно также, что средний процент нестандартных изделий для первой фабрики равен " + v4 + " %; для второй - " + v5 + " % и для третьей - " + v6 + " %. Найти вероятность того, что наудачу взятое изделие оказалось нестандартным" + Environment.NewLine;
+                        string s26 = "" + z + ")На склад поступает продукция трёх фабрик. Причём продукция первой фабрики составляет " + v1 + " %, второй - " + v2 + " % и третьей - " + v3 + " %. Известно также, что средний процент нестандартных изделий для первой фабрики равен " + v4 + " %; для второй - " + v5 + " % и для третьей - " + v6 + " %. Найти вероятность того, что наудачу взятое изделие оказалось нестандартным." + Environment.NewLine;
                         doc.InsertParagraph(s26);
                         double ans24;
                         ans24 = (double)((v1 * 0.01) * (v4 * 0.01) + (v2 * 0.01) * (v5 * 0.01) + (v3 * 0.01) * (v6 * 0.01));
@@ -390,14 +396,13 @@ namespace GenerationVariants
                     else
                     {
                         //задача сделана
-                        double pr1,pr2,pr3;
+                        double pr1, pr2, pr3;
                         //место для задачи партнера-Кристины!
                         //string s32,33 ans 27
-                        double pr1, pr2, pr3;
                         pr1 = random.Next(1, 95);//семян было обработано
                         pr2 = Math.Round(random.NextDouble() * 1, 1);//поражение обработанных
                         pr3 = Math.Round(random.NextDouble() * 1, 1);////поражение необработанных
-                        string s32 = "" + z + ")Перед посевом"+pr1+"% всех семян было обработано ядохимикатами. Вероятность поражения вредителями для растений из обработанных семян равна "+pr2+", для растений из необработанных семян - "+pr3+". Взятое наудачу растение оказалось пораженным. Какова вероятность того, что оно выращено из партии обработанных семян?" + Environment.NewLine;
+                        string s32 = "" + z + ")Перед посевом " + pr1 + " % всех семян было обработано ядохимикатами. Вероятность поражения вредителями для растений из обработанных семян равна " + pr2 + ", для растений из необработанных семян - " + pr3 + ". Взятое наудачу растение оказалось пораженным. Какова вероятность того, что оно выращено из партии обработанных семян?" + Environment.NewLine;
                         doc.InsertParagraph(s32);
                         double ans27;
                         ans27 = (double)(((pr1 / 100) * pr3) / ((pr1 / 100) * pr3 + (1 - (pr1 / 100)) * pr2));
@@ -413,9 +418,9 @@ namespace GenerationVariants
                     {
                         int y2, y3; double y1;
                         y1 = Math.Round(random.NextDouble() * 1, 1);
-                        y2 = random.Next(1, 10);
-                        y3 = random.Next(1, y2);
-                        string s34 = "" + z + ")При каждом выстреле из орудия вероятность попадания в цель равна " + y1 + ". Найти вероятность того, что при " + y2 + " выстрелах будет " + y3 + " выстрел мимо." + Environment.NewLine;
+                        y2 = random.Next(2, 10);
+                        y3 = random.Next(2, y2);
+                        string s34 = "" + z + ")При каждом выстреле из орудия вероятность попадания в цель равна " + y1 + ". Найти вероятность того, что при " + y2 + " выстрелах будет " + y3 + " выстрела(-ов) мимо." + Environment.NewLine;
                         doc.InsertParagraph(s34);
                         double ans28;
                         ans28 = Combinations(y2 - y3, y2) * (double)Math.Pow(y1, y2 - y3) * (double)Math.Pow(1 - y1, y3);
@@ -426,14 +431,14 @@ namespace GenerationVariants
                     {
                         //место для задачи партнера-Кристины!
                         //Диана привет!!Задачка готова!! ясно С# не умеет считать дроби фу
-                         double kos1,kos2,kos;
-                        kos = random.Next(2,7);
+                        double kos1, kos2, kos;
+                        kos = random.Next(2, 7);
                         kos1 = random.Next(1, 7);
                         kos2 = random.Next(1, (int)kos);
-                        string s36 = "" + z + ")Найти вероятность того, что при "+kos+" подбрасываниях игральной кости "+kos1+" очков появится "+kos2+ " раз(а)." + Environment.NewLine;
+                        string s36 = "" + z + ")Найти вероятность того, что при " + kos + " подбрасываниях игральной кости " + kos1 + " очков появится " + kos2 + " раз(-а)." + Environment.NewLine;
                         doc.InsertParagraph(s36);
                         double ans29;
-                        ans29 = Combinations((int)kos2,(int)kos) * (double)Math.Pow(0.17,kos2) * (double)Math.Pow(0.83,kos-kos2);
+                        ans29 = Combinations((int)kos2, (int)kos) * (double)Math.Pow(0.17, kos2) * (double)Math.Pow(0.83, kos - kos2);
                         string s37 = "" + "Задание " + z + " - " + ans29 + Environment.NewLine;
                         doc2.InsertParagraph(s37);
                     }
@@ -446,13 +451,13 @@ namespace GenerationVariants
                         int u2, u3; double u1;
                         u1 = Math.Round(random.NextDouble() * 0.9, 1);
                         if (u1 == 0) u1 += 0.1;
-                        u2 = random.Next(1, 100);//всего испытаний
-                        u3 = random.Next(1, u2);//сколько раз
+                        u2 = random.Next(2, 100);//всего испытаний
+                        u3 = random.Next(2, u2);//сколько раз
                         string s38 = "" + z + ")Вероятность наступления события в каждом из одинаковых и независимых испытаний равна " + u1 + ".Найти вероятность того, что в " + u2 + " испытаниях событие наступит " + u3 + " раз." + Environment.NewLine;
                         doc.InsertParagraph(s38);
                         double ans30;
-                        double vx = (double)((u3 - (u2 * u1)) /(double) (Math.Sqrt(u2 * u1 * (1 - u1))));
-                        ans30 = 1/((double)Math.Sqrt(u2 * u1 * (1 - u1)));
+                        double vx = (double)((u3 - (u2 * u1)) / (double)(Math.Sqrt(u2 * u1 * (1 - u1))));
+                        ans30 = 1 / ((double)Math.Sqrt(u2 * u1 * (1 - u1)));
                         string s39 = "" + "Задание " + z + " - ф(" + vx + ")" + ans30 + Environment.NewLine;
                         doc2.InsertParagraph(s39);
                     }
@@ -463,12 +468,12 @@ namespace GenerationVariants
                         vera1 = Math.Round(random.NextDouble() * 0.9, 1);
                         if (vera1 == 0) vera1 += 0.1;
                         vera2 = random.Next(1, 100);//всего выстрелов
-                        vera3 = random.Next(1,(int) vera2);//сколько раз
-                        string s40 = "" + z + ")Вероятность поражения мишени при одном выстреле равна "+vera1+". Найти вероятность того, что при "+vera2+" выстрелах мишень будет поражена "+vera3+" раз." + Environment.NewLine;
+                        vera3 = random.Next(1, (int)vera2);//сколько раз
+                        string s40 = "" + z + ")Вероятность поражения мишени при одном выстреле равна " + vera1 + ". Найти вероятность того, что при " + vera2 + " выстреле(-ах) мишень будет поражена " + vera3 + " раз." + Environment.NewLine;
                         doc.InsertParagraph(s40);
                         double ans31;
                         double vx = (double)((vera3 - (vera1 * vera2)) / (double)(Math.Sqrt(vera2 * vera1 * (1 - vera1))));
-                        ans31 = 1/((double)Math.Sqrt(vera2 * vera1 * (1 - vera1)));
+                        ans31 = 1 / ((double)Math.Sqrt(vera2 * vera1 * (1 - vera1)));
                         string s41 = "" + "Задание " + z + " - ф(" + vx + ")*" + ans31 + Environment.NewLine;
                         doc2.InsertParagraph(s41);
                     }
@@ -481,7 +486,7 @@ namespace GenerationVariants
                     {
                         int a1, a2, a3;
                         a1 = random.Next(5, 95);
-                        a2 = random.Next(1, 100);
+                        a2 = random.Next(2, 100);
                         a3 = random.Next(2, a2);
                         string s42 = "" + z + ")На склад поступают изделия, из которых " + a1 + " оказываются высшего сорта. Найти вероятность того, что из " + a2 + " взятых наудачу не менее " + a3 + " изделий окажется высшего сорта" + Environment.NewLine;
                         doc.InsertParagraph(s42);
@@ -509,7 +514,7 @@ namespace GenerationVariants
                         s1 = random.Next(20, 401);
                         s2 = Math.Round(random.NextDouble() * 1, 1);
                         s3 = Math.Round(random.NextDouble() * 1, 2);
-                        string s46 = "" + z + ")В автопарке имеется " + s1 + " автомобилей. Вероятность безотказной работы каждого из них равна " + s2 + ". С вероятностью " + s3 + " определить границы, в которых будет находиться доля безотказно работавших машин в определенный момент времени." + Environment.NewLine;
+                        string s46 = "" + z + ")В автопарке имеется " + s1 + " автомобиль(-ей). Вероятность безотказной работы каждого из них равна " + s2 + ". С вероятностью " + s3 + " определить границы, в которых будет находиться доля безотказно работавших машин в определенный момент времени." + Environment.NewLine;
                         doc.InsertParagraph(s46);
                         double qq, ww, rr;
                         qq = s1 * s2; ww = (double)((s3 + 1) / 2); rr = (double)Math.Sqrt((double)(s1 * s2 * (1 - s2)));
@@ -520,6 +525,16 @@ namespace GenerationVariants
                     {
                         //место для задачи партнера-Кристины!
                         //string s48,49 ans 35
+                        int j1; double j2, j3;//сколько
+                        j1 = random.Next(20, 401);
+                        j2 = Math.Round(random.NextDouble() * 1, 1);//вероятность общая
+                        j3 = Math.Round(random.NextDouble() * 1, 2);//граница
+                        string s48 = "" + z + ")Вероятность выплавки стабильного сплава в дуговой вакуумной установке равна " + j2 + " в каждой отдельной плавке. Произведена(-о) " + j1 + " плавка(-ок). Найти вероятность того, что относительная частота выплавки стабильного сплава отклонится от вероятности не более чем на " + j3 + " ." + Environment.NewLine;
+                        doc.InsertParagraph(s48);
+                        double qq, ww, rr;
+                        qq = j1 * j2; ww = (double)((j3 + 1) / 2); rr = (double)Math.Sqrt((double)(j1 * j2 * (1 - j2)));
+                        string s49 = "" + "Задание " + z + "- " + qq + "-Ф(" + ww + ")*" + rr + "<=X<=" + qq + "+Ф(" + ww + ")*" + rr + Environment.NewLine;
+                        doc2.InsertParagraph(s49);
                     }
                 }
 
@@ -530,11 +545,29 @@ namespace GenerationVariants
                     {
                         //я ее пока еще не делала
                         //string 50,51 ans 36
+                        int x1, x3; double x2;
+                        x1 = random.Next(10, 500);
+                        x3 = random.Next(10, x1);
+                        x2 = Math.Round(random.NextDouble() * 1, 3);
+                        string s50 = "" + z + ")Судно перевозит " + x1 + " упаковок доброкачественного груза. Вероятность того, что в рейсе любая упаковка повредится, равна " + x2 + " . Найти вероятность того, что в порт назначения будет доставлен груз с " + x3 + " упаковками испорченного груза." + Environment.NewLine;
+                        doc.InsertParagraph(s50);
+
+                        //string s51 = "" + "Задание " + z + "- " + qq + "-Ф(" + ww + ")*" + rr + "<=X<=" + qq + "+Ф(" + ww + ")*" + rr + Environment.NewLine;
+                        //doc2.InsertParagraph(s51);
                     }
                     else
                     {
                         //место для задачи партнера-Кристины!
                         //string 52,53 ans 37
+                        int v1, v3; double v2;
+                        v1 = random.Next(10, 500);
+                        v3 = random.Next(10, v1);
+                        v2 = Math.Round(random.NextDouble() * 1, 3);
+                        string s50 = "" + z + ")Вероятность того, что человек в период страхования будет травмирован, равна " + v2 + ". Компанией застраховано " + v1 + " человек. Какова вероятность того, что травму получат " + v3 + " человек?" + Environment.NewLine;
+                        doc.InsertParagraph(s50);
+
+                        //string s51 = "" + "Задание " + z + "- " + qq + "-Ф(" + ww + ")*" + rr + "<=X<=" + qq + "+Ф(" + ww + ")*" + rr + Environment.NewLine;
+                        //doc2.InsertParagraph(s51);
                     }
                 }
 
@@ -546,7 +579,7 @@ namespace GenerationVariants
                         double d1; int d2;
                         d1 = Math.Round(random.NextDouble() * 1, 1);
                         d2 = random.Next(15, 75);
-                        string s54 = "" + z + ")Вероятность получения студентом отличной оценки на экзамене равна " + d1 + ". Найти наивероятнейшее число отличных оценок и вероятность этого числа, если число студентов, сдающих экзамен равно " + d2 + Environment.NewLine;
+                        string s54 = "" + z + ")Вероятность получения студентом отличной оценки на экзамене равна " + d1 + ". Найти наивероятнейшее число отличных оценок и вероятность этого числа, если число студентов, сдающих экзамен равно " + d2+" ." + Environment.NewLine;
                         doc.InsertParagraph(s54);
                         double ans38, ans39;
                         ans38 = d1 * 0.01; ans39 = ans38 - 1;
