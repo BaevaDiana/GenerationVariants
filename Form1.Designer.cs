@@ -49,7 +49,7 @@ namespace GenerationVariants
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.generateButton = new System.Windows.Forms.Button();
             this.Count = new System.Windows.Forms.TextBox();
-            this.textNumberOfVariants = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // checkBox17
@@ -67,14 +67,15 @@ namespace GenerationVariants
             // 
             this.textBox1.BackColor = System.Drawing.Color.Lavender;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(6, 146);
+            this.textBox1.Location = new System.Drawing.Point(6, 129);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(219, 30);
+            this.textBox1.Size = new System.Drawing.Size(219, 47);
             this.textBox1.TabIndex = 45;
-            this.textBox1.Text = "         Выбрать задание:";
+            this.textBox1.Text = "   \r\n               Выбрать задание:\r\n";
+            //this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // checkBox16
             // 
@@ -239,10 +240,10 @@ namespace GenerationVariants
             // generateButton
             // 
             this.generateButton.BackColor = System.Drawing.Color.LightBlue;
-            this.generateButton.Location = new System.Drawing.Point(49, 60);
+            this.generateButton.Location = new System.Drawing.Point(49, 68);
             this.generateButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(319, 53);
+            this.generateButton.Size = new System.Drawing.Size(330, 53);
             this.generateButton.TabIndex = 26;
             this.generateButton.Text = "Сгенерировать";
             this.generateButton.UseVisualStyleBackColor = false;
@@ -251,7 +252,7 @@ namespace GenerationVariants
             // Count
             // 
             this.Count.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Count.Location = new System.Drawing.Point(225, 13);
+            this.Count.Location = new System.Drawing.Point(233, 13);
             this.Count.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Count.MaxLength = 3;
             this.Count.Multiline = true;
@@ -260,24 +261,26 @@ namespace GenerationVariants
             this.Count.TabIndex = 24;
             this.Count.TextChanged += new System.EventHandler(this.inputNumberOfVariants_TextChanged);
             // 
-            // textNumberOfVariants
+            // textBox2
             // 
-            this.textNumberOfVariants.BackColor = System.Drawing.Color.Lavender;
-            this.textNumberOfVariants.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textNumberOfVariants.Location = new System.Drawing.Point(12, 13);
-            this.textNumberOfVariants.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textNumberOfVariants.Multiline = true;
-            this.textNumberOfVariants.Name = "textNumberOfVariants";
-            this.textNumberOfVariants.ReadOnly = true;
-            this.textNumberOfVariants.Size = new System.Drawing.Size(193, 39);
-            this.textNumberOfVariants.TabIndex = 25;
-            this.textNumberOfVariants.Text = "       Количество вариантов:";
+            this.textBox2.BackColor = System.Drawing.Color.Lavender;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Location = new System.Drawing.Point(6, 5);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(219, 47);
+            this.textBox2.TabIndex = 47;
+            this.textBox2.Text = "                                                       \r\n           Количество ва" +
+    "риантов:\r\n";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.checkBox17);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.checkBox16);
@@ -298,7 +301,6 @@ namespace GenerationVariants
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.Count);
-            this.Controls.Add(this.textNumberOfVariants);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -327,7 +329,7 @@ namespace GenerationVariants
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.TextBox Count;
-        private System.Windows.Forms.TextBox textNumberOfVariants;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
