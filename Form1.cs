@@ -37,8 +37,8 @@ namespace GenerationVariants
         }
         private void generateButton_Click(object sender, EventArgs e)
         {
-            string fileName = @"C:\Users\Дианочка\source\repos\GenerationVariants\ex.docx";
-            string fileName2 = @"C:\Users\Дианочка\source\repos\GenerationVariants\ans.docx";
+            string fileName = @"C:\Users\Кристина\source\repos\GenerationVariants\ex.docx";
+            string fileName2 = @"C:\Users\Кристина\source\repos\GenerationVariants\ans.docx";
             var doc = DocX.Create(fileName);
             var doc2 = DocX.Create(fileName2);
             int k, z;
@@ -319,8 +319,8 @@ namespace GenerationVariants
                     else
                     {
                         int b1, b2, b3, b4;
-                        b1 = random.Next(3, 10);//всего инженеров
-                        b2 = random.Next(2, b1);//всего женщин
+                        b1 = random.Next(5, 15);//всего инженеров
+                        b2 = random.Next(2,b1-3);//всего женщин
                         b3 = random.Next(2, b1 - 1);//в смене человек
                         b4 = random.Next(2, b1 - b2);//мужчин в смене
                         //while (b4 > b1 - b2) b4 = random.Next(2, b3);
@@ -390,7 +390,6 @@ namespace GenerationVariants
                     else
                     {
                         //задача сделана
-                        double pr1,pr2,pr3;
                         //место для задачи партнера-Кристины!
                         //string s32,33 ans 27
                         double pr1, pr2, pr3;
@@ -458,7 +457,7 @@ namespace GenerationVariants
                     }
                     else
                     {
-                        //Диана у меня перемнных ховут вера....
+                        //Диана у меня перемнных зовут вера....
                         double vera1, vera2, vera3;
                         vera1 = Math.Round(random.NextDouble() * 0.9, 1);
                         if (vera1 == 0) vera1 += 0.1;
@@ -494,8 +493,21 @@ namespace GenerationVariants
                     }
                     else
                     {
-                        //место для задачи партнера-Кристины!
-                        //string s44,45 ans 34
+                        //место для задачи партнера-Кристины!Диана привет!! 
+                        //string s44,45 ans 345
+                        int a1, a2, a3,a4;
+                        a1 = random.Next(5, 95);//p
+                        a2 = random.Next(700, 1500);//n
+                        a3 = random.Next(200, a2-100);//a
+                        a4 = random.Next(a3+1, a2);//b
+                        string s44 = "" + z + ")Всхожесть семян составляет "+a1+"%. Какова вероятность того. Что из "+a2+" посеянных семян взойдут от "+a3+" до "+a4+"?" + Environment.NewLine;
+                        doc.InsertParagraph(s44);
+                        double ans34, ans35;
+                        double ll = (double)(a1 * 0.01);
+                        ans34 = (double)(((a3 - (ll * a2))) /(double) (Math.Sqrt((double)(a2 * ll * (1 - ll)))));
+                        ans35 = (double)(((a4 - (ll * a2))) / (double)(Math.Sqrt((double)(a2 * ll * (1 - ll)))));
+                        string s45 = "" + "Задание " + z + " - Ф(" + ans34 + ")-Ф(" + ans35 + ")" + Environment.NewLine;
+                        doc2.InsertParagraph(s45);
                     }
                 }
 
@@ -519,7 +531,7 @@ namespace GenerationVariants
                     else
                     {
                         //место для задачи партнера-Кристины!
-                        //string s48,49 ans 35
+                        //string s48,49 ans 35 гитхаб пожалуйста отпрвь задачу
                     }
                 }
 
@@ -557,6 +569,15 @@ namespace GenerationVariants
                     {
                         //место для задачи партнера-Кристины!
                         //string s44,45 ans 31
+                          double d1; int d2;
+                        d1 = Math.Round(random.NextDouble() * 1, 1);
+                        d2 = random.Next(15, 75);
+                        string s54 = "" + z + ")16)	Вероятность того, что автомат при опускании одной монеты правильно сработает, равна 0,99. Найти наиболее вероятное число случаев неправильной работы автомата и вероятность этого числа, если будет опущено 200 монет. " + d2 + Environment.NewLine;
+                        doc.InsertParagraph(s54);
+                        double ans38, ans39;
+                        ans38 = d1 * 0.01; ans39 = ans38 - 1;
+                        string s55 = "" + "Задание " + z + "- " + ans39 + "<=k0<=" + ans38 + Environment.NewLine;
+                        doc2.InsertParagraph(s55);
                     }
                 }
 
