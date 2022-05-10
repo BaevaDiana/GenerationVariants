@@ -570,7 +570,7 @@ namespace GenerationVariants
                         double xx3 = Convert.ToDouble(x3);
                         double stepen = Math.Pow(lam, xx3);
                         int mfact = Factorial(x3);
-                        string s51 = "" + "Задание " + z + "- " + " ( " + Math.Round(stepen, 2) + " *e^(-" + Math.Round(lam, 2) + "))/" + mfact + Environment.NewLine;
+                        string s51 = "" + "Задание " + z + "- " + " ( " + Math.Round(stepen,4) + " *e^(-" + Math.Round(lam, 2) + "))/" + mfact + Environment.NewLine;
                         doc2.InsertParagraph(s51);
                     }
                     else
@@ -585,7 +585,7 @@ namespace GenerationVariants
                         double xx32 = Convert.ToDouble(vv3);
                         double stepen = Math.Pow(lam2, xx32);
                         int mfact2 = Factorial(vv3);
-                        string s53 = "" + "Задание " + z + "- " + " ( " + Math.Round(stepen, 2) + " *e^(-" + Math.Round(lam2, 2) + "))/" + mfact2 + Environment.NewLine;
+                        string s53 = "" + "Задание " + z + "- " + " ( " + Math.Round(stepen,4) + " *e^(-" + Math.Round(lam2, 2) + "))/" + mfact2 + Environment.NewLine;
                         doc2.InsertParagraph(s53);
                     }
                 }
@@ -602,7 +602,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s54);
                         double ans38, ans39;
                         ans38 = (d2 + 1) * d1 - 1; ans39 = ans38 + 1;
-                        string s55 = "" + "Задание " + z + "- (" + ans39 + "<=k0<=" + ans38 +")"+ Environment.NewLine;
+                        string s55 = "" + "Задание " + z + "- (" + ans38 + "<=k0<=" + ans39 +")"+ Environment.NewLine;
                         doc2.InsertParagraph(s55);
                     }
                     else
@@ -614,6 +614,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s56);
                         double ans40, ans41;
                         ans40 = ra1 * ra2 - (1 - ra1); ans41 = ra1 * ra2 + ra1;
+
                         string s57 = "" + "Задание " + z + "- (" + ans40 + "<=k0<=" + ans41 +")"+ Environment.NewLine;
                         doc2.InsertParagraph(s57);
                     }
@@ -877,12 +878,13 @@ namespace GenerationVariants
                             else
                             {
                                 int b1, b2, b3, b4;
-                                b1 = random.Next(5, 15);//всего инженеров
-                                b2 = random.Next(2, b1 - 3);//всего женщин
-                                b3 = random.Next(2, b1 - 1);//в смене человек
-                                b4 = random.Next(2, b1 - b2);//мужчин в смене
-                                                             //while (b4 > b1 - b2) b4 = random.Next(2, b3);
-                                string s24 = "" + "8)На тепловой электростанции " + b1 + " сменных инженеров, из них " + b2 + " женщин. В смену занято " + b3 + " человека. Найти вероятность того, что в случайно выбранную смену окажется " + b4 + " мужчин." + Environment.NewLine;
+                                 b1 = random.Next(7, 15);//всего инженеров
+                                 b2 = random.Next(2, b1 - 3);//всего женщин
+                                 b3 = random.Next(2, b1 - b2);//в смене человек
+                                 b4 = random.Next(0, b3);//мужчин в смене
+
+                        //while (b4 > b1 - b2) b4 = random.Next(2, b3);
+                        string s24 = "" + "8)На тепловой электростанции " + b1 + " сменных инженеров, из них " + b2 + " женщин. В смену занято " + b3 + " человека. Найти вероятность того, что в случайно выбранную смену окажется " + b4 + " мужчин." + Environment.NewLine;
                                 doc.InsertParagraph(s24);
                                 double ans23;
                                 ans23 = (double)(Combinations(b4, b1 - b2) * Combinations(b3 - b4, b2)) / (Combinations(b3, b1));
@@ -895,13 +897,14 @@ namespace GenerationVariants
                             if (k % 2 != 0)
                             {
                                 int v1, v2, v3, v4, v5, v6;
-                                v1 = random.Next(10, 100);//продукции с первой фабрики
-                                v2 = random.Next(1, (100 - v1));//продукции со второй фабрики
-                                v3 = random.Next(1, (100 - v1 - v2));//продукции с третьей фабрики
-                                v4 = random.Next(1, 30);//процент нестандартных с первой фабрики
-                                v5 = random.Next(1, v4);//процент нестандартных со второй фабрики
-                                v6 = random.Next(1, v5);//процент нестандартных с третьей фабрики
-                                string s26 = "" + "9)На склад поступает продукция трёх фабрик. Причём продукция первой фабрики составляет " + v1 + " %, второй - " + v2 + " % и третьей - " + v3 + " %. Известно также, что средний процент нестандартных изделий для первой фабрики равен " + v4 + " %; для второй - " + v5 + " % и для третьей - " + v6 + " %. Найти вероятность того, что наудачу взятое изделие оказалось нестандартным." + Environment.NewLine;
+                        v1 = random.Next(1, 50);//продукции с первой фабрики
+                        v2 = random.Next(1, (100 - v1) - 10);//продукции со второй фабрики
+                        v3 = random.Next(1, (100 - v1 - v2));//продукции с третьей фабрики
+                        v4 = random.Next(1, 30);//процент нестандартных с первой фабрики
+                        v5 = random.Next(1, v4);//процент нестандартных со второй фабрики
+                        v6 = random.Next(1, v5);//процент нестандартных с третьей фабрики
+
+                        string s26 = "" + "9)На склад поступает продукция трёх фабрик. Причём продукция первой фабрики составляет " + v1 + " %, второй - " + v2 + " % и третьей - " + v3 + " %. Известно также, что средний процент нестандартных изделий для первой фабрики равен " + v4 + " %; для второй - " + v5 + " % и для третьей - " + v6 + " %. Найти вероятность того, что наудачу взятое изделие оказалось нестандартным." + Environment.NewLine;
                                 doc.InsertParagraph(s26);
                                 double ans24;
                                 ans24 = (double)((v1 * 0.01) * (v4 * 0.01) + (v2 * 0.01) * (v5 * 0.01) + (v3 * 0.01) * (v6 * 0.01));
@@ -1082,7 +1085,7 @@ namespace GenerationVariants
                         double xx3 = Convert.ToDouble(x3);
                         double stepen = Math.Pow(lam, xx3);
                         int mfact = Factorial(x3);
-                        string s51 = "" + "Задание 15 - " + " ( " + Math.Round(stepen, 2) + " *e^(-" + Math.Round(lam, 2) + "))/" + mfact + Environment.NewLine;
+                        string s51 = "" + "Задание 15 - " + " ( " + Math.Round(stepen, 4) + " *e^(-" + Math.Round(lam, 2) + "))/" + mfact + Environment.NewLine;
                         doc2.InsertParagraph(s51);
                     }
                     else
@@ -1097,7 +1100,7 @@ namespace GenerationVariants
                         double xx32 = Convert.ToDouble(vv3);
                         double stepen = Math.Pow(lam2, xx32);
                         int mfact2 = Factorial(vv3);
-                        string s53 = "" + "Задание 15 - " + " ( " + Math.Round(stepen, 2) + " *e^(-" + Math.Round(lam2, 2) + "))/" + mfact2 + Environment.NewLine;
+                        string s53 = "" + "Задание 15 - " + " ( " + Math.Round(stepen, 4) + " *e^(-" + Math.Round(lam2, 2) + "))/" + mfact2 + Environment.NewLine;
                         doc2.InsertParagraph(s53);
                     }
 
@@ -1111,7 +1114,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s54);
                         double ans38, ans39;
                         ans38 = (d2 + 1) * d1 - 1; ans39 = ans38 + 1;
-                        string s55 = "" + "Задание 16 - (" + ans39 + "<=k0<=" + ans38 +")"+ Environment.NewLine;
+                        string s55 = "" + "Задание 16 - (" + ans38 + "<=k0<=" + ans39 +")"+ Environment.NewLine;
                         doc2.InsertParagraph(s55);
                     }
                     else

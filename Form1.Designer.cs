@@ -338,7 +338,7 @@ namespace GenerationVariants
             this.Controls.Add(this.Count);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Генерация вариантов";
             this.ResumeLayout(false);
             this.PerformLayout();
 
