@@ -634,7 +634,7 @@ namespace GenerationVariants
                                 double h1, p2;
                                 h1 = random.Next(2, 17);//этажи
                                 p2 = random.Next(2, 11);//люди
-                                string s4 = "" + "2)" + p2 + " человек(-a) вошли в лифт на 1-м этаже" + " дома с" + " " + h1 + " этажами. Сколькими способами пассажиры могут выйти из лифта на нужных этажах?" + Environment.NewLine;
+                                string s4 = "" + "1)" + p2 + " человек(-a) вошли в лифт на 1-м этаже" + " дома с" + " " + h1 + " этажами. Сколькими способами пассажиры могут выйти из лифта на нужных этажах?" + Environment.NewLine;
                                 doc.InsertParagraph(s4);
                                 double ans1 = (int)Math.Pow(h1 - 1, p2);
                                 string s5 = "" + "Задание 2 - " + ans1 + Environment.NewLine;
@@ -1054,11 +1054,11 @@ namespace GenerationVariants
                         j1 = Math.Round(random.NextDouble() * 0.9, 1);//вер1
                         j2 = random.Next(50, 150);//всего выплаовк
                         j3 = Math.Round(random.NextDouble() * 0.95, 2);//вер2
-                        string s48 = "" + z + ")Вероятность выплавки стабильного сплава в дуговой вакуумной установке равна " + j1 + "в каждой отдельной плавке. Произведено " + j2 + " плавок. С вероятностью " + j3 + " определить границы, в которых будет находиться доля выплавки стабильного сплава в определенный момент времени." + Environment.NewLine;
+                        string s48 = "" + "14)Вероятность выплавки стабильного сплава в дуговой вакуумной установке равна " + j1 + "в каждой отдельной плавке. Произведено " + j2 + " плавок. С вероятностью " + j3 + " определить границы, в которых будет находиться доля выплавки стабильного сплава в определенный момент времени." + Environment.NewLine;
                         doc.InsertParagraph(s48);
                         double qq, ww, rr;
                         qq = j1 * j2; ww = (double)((j3 + 1) / 2); rr = (double)Math.Sqrt((double)(j1 * j2 * (1 - j1)));
-                        string s49 = "" + "Задание " + z + "- " + qq + "-Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + "<=X<=" + Math.Round(qq, 2) + "+Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + Environment.NewLine;
+                        string s49 = "" + "Задание 14 " + "- " + qq + "-Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + "<=X<=" + Math.Round(qq, 2) + "+Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + Environment.NewLine;
                         doc2.InsertParagraph(s49);
                             }
 
