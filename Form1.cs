@@ -522,9 +522,9 @@ namespace GenerationVariants
                     if (k % 2 != 0)
                     {
                         int s1; double s2, s3;
-                        s1 = random.Next(20, 401);
-                        s2 = Math.Round(random.NextDouble() * 1, 1);
-                        s3 = Math.Round(random.NextDouble() * 1, 2);
+                        s1 = random.Next(20, 401);//всего
+                        s2 = Math.Round(random.NextDouble() * 0.9, 1);//вер1
+                        s3 = Math.Round(random.NextDouble() * 0.95, 2);//вер2
                         string s46 = "" + z + ")В автопарке имеется " + s1 + " автомобиль(-ей). Вероятность безотказной работы каждого из них равна " + s2 + ". С вероятностью " + s3 + " определить границы, в которых будет находиться доля безотказно работавших машин в определенный момент времени." + Environment.NewLine;
                         doc.InsertParagraph(s46);
                         double qq, ww, rr;
@@ -534,14 +534,14 @@ namespace GenerationVariants
                     }
                     else
                     {
-                        int j1; double j2, j3;//сколько
-                        j1 = random.Next(20, 401);
-                        j2 = Math.Round(random.NextDouble() * 1, 1);//вероятность общая
-                        j3 = Math.Round(random.NextDouble() * 1, 2);//граница
-                        string s48 = "" + z + ")Вероятность выплавки стабильного сплава в дуговой вакуумной установке равна " + j2 + " в каждой отдельной плавке. Произведена(-о) " + j1 + " плавка(-ок). Найти вероятность того, что относительная частота выплавки стабильного сплава отклонится от вероятности не более чем на " + j3 + " ." + Environment.NewLine;
+                        double j1,j2, j3;//сколько
+                        j1 = Math.Round(random.NextDouble() * 0.9, 1);//вер1
+                        j2 = random.Next(50, 150);//всего выплаовк
+                        j3 = Math.Round(random.NextDouble() * 0.95, 2);//вер2
+                        string s48 = "" + z + ")Вероятность выплавки стабильного сплава в дуговой вакуумной установке равна "+j1+ "в каждой отдельной плавке. Произведено "+j2+" плавок. С вероятностью "+j3+" определить границы, в которых будет находиться доля выплавки стабильного сплава в определенный момент времени."+ Environment.NewLine;
                         doc.InsertParagraph(s48);
                         double qq, ww, rr;
-                        qq = j1 * j2; ww = (double)((j3 + 1) / 2); rr = (double)Math.Sqrt((double)(j1 * j2 * (1 - j2)));
+                        qq = j1 * j2; ww = (double)((j3 + 1) / 2); rr = (double)Math.Sqrt((double)(j1 * j2 * (1 - j1)));
                         string s49 = "" + "Задание " + z + "- " + qq + "-Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + "<=X<=" + Math.Round(qq, 2) + "+Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + Environment.NewLine;
                         doc2.InsertParagraph(s49);
                     }
@@ -1050,16 +1050,16 @@ namespace GenerationVariants
                             }
                             else
                             {
-                                int j1; double j2, j3;//сколько
-                                j1 = random.Next(20, 401);
-                                j2 = Math.Round(random.NextDouble() * 1, 1);//вероятность общая
-                                j3 = Math.Round(random.NextDouble() * 1, 2);//граница
-                                string s48 = "" + "14)Вероятность выплавки стабильного сплава в дуговой вакуумной установке равна " + j2 + " в каждой отдельной плавке. Произведена(-о) " + j1 + " плавка(-ок). Найти вероятность того, что относительная частота выплавки стабильного сплава отклонится от вероятности не более чем на " + j3 + " ." + Environment.NewLine;
-                                doc.InsertParagraph(s48);
-                                double qq, ww, rr;
-                                qq = j1 * j2; ww = (double)((j3 + 1) / 2); rr = (double)Math.Sqrt((double)(j1 * j2 * (1 - j2)));
-                                string s49 = "" + "Задание 14 - " + qq + "-Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + "<=X<=" + Math.Round(qq, 2) + "+Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + Environment.NewLine;
-                                doc2.InsertParagraph(s49);
+                        double j1, j2, j3;//сколько
+                        j1 = Math.Round(random.NextDouble() * 0.9, 1);//вер1
+                        j2 = random.Next(50, 150);//всего выплаовк
+                        j3 = Math.Round(random.NextDouble() * 0.95, 2);//вер2
+                        string s48 = "" + z + ")Вероятность выплавки стабильного сплава в дуговой вакуумной установке равна " + j1 + "в каждой отдельной плавке. Произведено " + j2 + " плавок. С вероятностью " + j3 + " определить границы, в которых будет находиться доля выплавки стабильного сплава в определенный момент времени." + Environment.NewLine;
+                        doc.InsertParagraph(s48);
+                        double qq, ww, rr;
+                        qq = j1 * j2; ww = (double)((j3 + 1) / 2); rr = (double)Math.Sqrt((double)(j1 * j2 * (1 - j1)));
+                        string s49 = "" + "Задание " + z + "- " + qq + "-Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + "<=X<=" + Math.Round(qq, 2) + "+Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + Environment.NewLine;
+                        doc2.InsertParagraph(s49);
                             }
 
                             if (k % 2 != 0)
