@@ -52,10 +52,14 @@ namespace GenerationVariants
             Xceed.Document.NET.Image img22 = doc2.AddImage($@"{pathDirectory}\table2.PNG");
             Xceed.Document.NET.Picture ppp2 = img22.CreatePicture();
 
+            progressBar1.Maximum = n;
+         
+            label1.Text = "Варианты записаны" ;
             int k, z;
             Random random = new Random();
             for (k = 1; k <= n; k++)
             {
+                progressBar1.Value += 1;
                 z = 0;
                 string s = "" + "Вариант №" + k + Environment.NewLine;
                 doc.InsertParagraph(s);
@@ -1142,8 +1146,8 @@ namespace GenerationVariants
             }
             doc.Save();
             doc2.Save();
-            Process.Start("WINWORD.EXE", fileName);
-            Process.Start("WINWORD.EXE", fileName2);
+            //Process.Start("WINWORD.EXE", fileName);
+            //Process.Start("WINWORD.EXE", fileName2);
 
         }
 

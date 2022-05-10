@@ -50,39 +50,41 @@ namespace GenerationVariants
             this.generateButton = new System.Windows.Forms.Button();
             this.Count = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // checkBox17
             // 
             this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(468, 218);
+            this.checkBox17.Location = new System.Drawing.Point(351, 177);
+            this.checkBox17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(214, 21);
+            this.checkBox17.Size = new System.Drawing.Size(169, 17);
             this.checkBox17.TabIndex = 46;
             this.checkBox17.Text = "Сгенерировать все задания";
             this.checkBox17.UseVisualStyleBackColor = true;
-            
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.Lavender;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(6, 129);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Location = new System.Drawing.Point(4, 105);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(219, 47);
+            this.textBox1.Size = new System.Drawing.Size(164, 38);
             this.textBox1.TabIndex = 45;
             this.textBox1.Text = "   \r\n               Выбрать задание:\r\n";
-            //this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // checkBox16
             // 
             this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(333, 251);
+            this.checkBox16.Location = new System.Drawing.Point(250, 204);
+            this.checkBox16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(46, 21);
+            this.checkBox16.Size = new System.Drawing.Size(38, 17);
             this.checkBox16.TabIndex = 44;
             this.checkBox16.Text = "16";
             this.checkBox16.UseVisualStyleBackColor = true;
@@ -90,9 +92,10 @@ namespace GenerationVariants
             // checkBox15
             // 
             this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(277, 251);
+            this.checkBox15.Location = new System.Drawing.Point(208, 204);
+            this.checkBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(46, 21);
+            this.checkBox15.Size = new System.Drawing.Size(38, 17);
             this.checkBox15.TabIndex = 43;
             this.checkBox15.Text = "15";
             this.checkBox15.UseVisualStyleBackColor = true;
@@ -100,9 +103,10 @@ namespace GenerationVariants
             // checkBox14
             // 
             this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(229, 251);
+            this.checkBox14.Location = new System.Drawing.Point(172, 204);
+            this.checkBox14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(46, 21);
+            this.checkBox14.Size = new System.Drawing.Size(38, 17);
             this.checkBox14.TabIndex = 42;
             this.checkBox14.Text = "14";
             this.checkBox14.UseVisualStyleBackColor = true;
@@ -110,9 +114,10 @@ namespace GenerationVariants
             // checkBox13
             // 
             this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(187, 251);
+            this.checkBox13.Location = new System.Drawing.Point(140, 204);
+            this.checkBox13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(46, 21);
+            this.checkBox13.Size = new System.Drawing.Size(38, 17);
             this.checkBox13.TabIndex = 41;
             this.checkBox13.Text = "13";
             this.checkBox13.UseVisualStyleBackColor = true;
@@ -120,9 +125,10 @@ namespace GenerationVariants
             // checkBox12
             // 
             this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(134, 251);
+            this.checkBox12.Location = new System.Drawing.Point(100, 204);
+            this.checkBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(46, 21);
+            this.checkBox12.Size = new System.Drawing.Size(38, 17);
             this.checkBox12.TabIndex = 40;
             this.checkBox12.Text = "12";
             this.checkBox12.UseVisualStyleBackColor = true;
@@ -130,9 +136,10 @@ namespace GenerationVariants
             // checkBox11
             // 
             this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(93, 251);
+            this.checkBox11.Location = new System.Drawing.Point(70, 204);
+            this.checkBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(46, 21);
+            this.checkBox11.Size = new System.Drawing.Size(38, 17);
             this.checkBox11.TabIndex = 39;
             this.checkBox11.Text = "11";
             this.checkBox11.UseVisualStyleBackColor = true;
@@ -140,9 +147,10 @@ namespace GenerationVariants
             // checkBox10
             // 
             this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(41, 251);
+            this.checkBox10.Location = new System.Drawing.Point(31, 204);
+            this.checkBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(46, 21);
+            this.checkBox10.Size = new System.Drawing.Size(38, 17);
             this.checkBox10.TabIndex = 38;
             this.checkBox10.Text = "10";
             this.checkBox10.UseVisualStyleBackColor = true;
@@ -150,9 +158,10 @@ namespace GenerationVariants
             // checkBox9
             // 
             this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(6, 251);
+            this.checkBox9.Location = new System.Drawing.Point(4, 204);
+            this.checkBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(38, 21);
+            this.checkBox9.Size = new System.Drawing.Size(32, 17);
             this.checkBox9.TabIndex = 37;
             this.checkBox9.Text = "9";
             this.checkBox9.UseVisualStyleBackColor = true;
@@ -160,9 +169,10 @@ namespace GenerationVariants
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(333, 204);
+            this.checkBox8.Location = new System.Drawing.Point(250, 166);
+            this.checkBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(38, 21);
+            this.checkBox8.Size = new System.Drawing.Size(32, 17);
             this.checkBox8.TabIndex = 36;
             this.checkBox8.Text = "8";
             this.checkBox8.UseVisualStyleBackColor = true;
@@ -170,9 +180,10 @@ namespace GenerationVariants
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(281, 204);
+            this.checkBox7.Location = new System.Drawing.Point(211, 166);
+            this.checkBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(38, 21);
+            this.checkBox7.Size = new System.Drawing.Size(32, 17);
             this.checkBox7.TabIndex = 35;
             this.checkBox7.Text = "7";
             this.checkBox7.UseVisualStyleBackColor = true;
@@ -180,9 +191,10 @@ namespace GenerationVariants
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(233, 204);
+            this.checkBox6.Location = new System.Drawing.Point(175, 166);
+            this.checkBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(38, 21);
+            this.checkBox6.Size = new System.Drawing.Size(32, 17);
             this.checkBox6.TabIndex = 34;
             this.checkBox6.Text = "6";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -190,9 +202,10 @@ namespace GenerationVariants
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(187, 204);
+            this.checkBox5.Location = new System.Drawing.Point(140, 166);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(38, 21);
+            this.checkBox5.Size = new System.Drawing.Size(32, 17);
             this.checkBox5.TabIndex = 33;
             this.checkBox5.Text = "5";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -200,9 +213,10 @@ namespace GenerationVariants
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(137, 204);
+            this.checkBox4.Location = new System.Drawing.Point(103, 166);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(38, 21);
+            this.checkBox4.Size = new System.Drawing.Size(32, 17);
             this.checkBox4.TabIndex = 32;
             this.checkBox4.Text = "4";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -210,9 +224,10 @@ namespace GenerationVariants
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(93, 204);
+            this.checkBox3.Location = new System.Drawing.Point(70, 166);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(38, 21);
+            this.checkBox3.Size = new System.Drawing.Size(32, 17);
             this.checkBox3.TabIndex = 31;
             this.checkBox3.Text = "3";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -220,9 +235,10 @@ namespace GenerationVariants
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(49, 204);
+            this.checkBox2.Location = new System.Drawing.Point(37, 166);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(38, 21);
+            this.checkBox2.Size = new System.Drawing.Size(32, 17);
             this.checkBox2.TabIndex = 30;
             this.checkBox2.Text = "2";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -230,9 +246,10 @@ namespace GenerationVariants
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 204);
+            this.checkBox1.Location = new System.Drawing.Point(4, 166);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(38, 21);
+            this.checkBox1.Size = new System.Drawing.Size(32, 17);
             this.checkBox1.TabIndex = 29;
             this.checkBox1.Text = "1";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -240,10 +257,10 @@ namespace GenerationVariants
             // generateButton
             // 
             this.generateButton.BackColor = System.Drawing.Color.LightBlue;
-            this.generateButton.Location = new System.Drawing.Point(49, 68);
-            this.generateButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.generateButton.Location = new System.Drawing.Point(37, 55);
+            this.generateButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(330, 53);
+            this.generateButton.Size = new System.Drawing.Size(248, 43);
             this.generateButton.TabIndex = 26;
             this.generateButton.Text = "Сгенерировать";
             this.generateButton.UseVisualStyleBackColor = false;
@@ -252,12 +269,12 @@ namespace GenerationVariants
             // Count
             // 
             this.Count.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Count.Location = new System.Drawing.Point(233, 13);
-            this.Count.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Count.Location = new System.Drawing.Point(175, 11);
+            this.Count.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Count.MaxLength = 3;
             this.Count.Multiline = true;
             this.Count.Name = "Count";
-            this.Count.Size = new System.Drawing.Size(154, 30);
+            this.Count.Size = new System.Drawing.Size(116, 25);
             this.Count.TabIndex = 24;
             this.Count.TextChanged += new System.EventHandler(this.inputNumberOfVariants_TextChanged);
             // 
@@ -265,21 +282,39 @@ namespace GenerationVariants
             // 
             this.textBox2.BackColor = System.Drawing.Color.Lavender;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(6, 5);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox2.Location = new System.Drawing.Point(4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(219, 47);
+            this.textBox2.Size = new System.Drawing.Size(164, 38);
             this.textBox2.TabIndex = 47;
             this.textBox2.Text = "                                                       \r\n           Количество ва" +
     "риантов:\r\n";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(250, 296);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(153, 33);
+            this.progressBar1.TabIndex = 48;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(264, 259);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 13);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Выполнение генерации";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.checkBox17);
             this.Controls.Add(this.textBox1);
@@ -301,6 +336,7 @@ namespace GenerationVariants
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.Count);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -330,6 +366,8 @@ namespace GenerationVariants
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.TextBox Count;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
