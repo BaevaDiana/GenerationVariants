@@ -326,7 +326,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s22);
                         double ans22;
                         ans22 = Combinations(f3, f2) * (double)Math.Pow(ff, ffff3) * (double)Math.Pow(raz1, raz);
-                        string s23 = "" + "Задание " + z + " - " + ans22 + Environment.NewLine;
+                        string s23 = "" + "Задание " + z + " - " + Math.Round(ans22,2) + Environment.NewLine;
                         doc2.InsertParagraph(s23);
                     }
                     else
@@ -341,7 +341,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s24);
                         double ans23;
                         ans23 = (double)(Combinations(b4, b1 - b2) * Combinations(b3 - b4, b2)) / (Combinations(b3, b1));
-                        string s25 = "" + "Задание " + z + " - " + ans23 + Environment.NewLine;
+                        string s25 = "" + "Задание " + z + " - " + Math.Round(ans23, 2) + Environment.NewLine;
                         doc2.InsertParagraph(s25);
                     }
                 }
@@ -362,7 +362,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s26);
                         double ans24;
                         ans24 = (double)((v1 * 0.01) * (v4 * 0.01) + (v2 * 0.01) * (v5 * 0.01) + (v3 * 0.01) * (v6 * 0.01));
-                        string s27 = "" + "Задание " + z + " - " + ans24 + Environment.NewLine;
+                        string s27 = "" + "Задание " + z + " - " + Math.Round(ans24, 2) + Environment.NewLine;
                         doc2.InsertParagraph(s27);
                     }
                     else
@@ -378,7 +378,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s28);
                         double ans25;
                         ans25 = (double)(((v4 / (v4 + v5 + v6) * (v1)) + ((v5 / (v4 + v5 + v6)) * v2) + ((v6 / (v4 + v5 + v6)) * v3)));
-                        string s27 = "" + "Задание " + z + " - " + ans25 + Environment.NewLine;
+                        string s27 = "" + "Задание " + z + " - " + Math.Round(ans25, 2) + Environment.NewLine;
                         doc2.InsertParagraph(s27);
                     }
                 }
@@ -395,7 +395,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s30);
                         double ans26;
                         ans26 = (double)(0.66666 * (t1 * 0.01)) / (0.66666 * (t1 * 0.01) + 0.33333 * (t2 * 0.01));
-                        string s31 = "" + "Задание " + z + " - " + ans26 + Environment.NewLine;
+                        string s31 = "" + "Задание " + z + " - " + Math.Round(ans26, 2) + Environment.NewLine;
                         doc2.InsertParagraph(s31);
                     }
                     else
@@ -408,7 +408,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s32);
                         double ans27;
                         ans27 = (double)(((pr1 / 100) * pr3) / ((pr1 / 100) * pr3 + (1 - (pr1 / 100)) * pr2));
-                        string s33 = "" + "Задание " + z + " - " + ans27 + Environment.NewLine;
+                        string s33 = "" + "Задание " + z + " - " + Math.Round(ans27, 2) + Environment.NewLine;
                         doc2.InsertParagraph(s33);
                     }
                 }
@@ -426,7 +426,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s34);
                         double ans28;
                         ans28 = Combinations(y2 - y3, y2) * (double)Math.Pow(y1, y2 - y3) * (double)Math.Pow(1 - y1, y3);
-                        string s35 = "" + "Задание " + z + " - " + ans28 + Environment.NewLine;
+                        string s35 = "" + "Задание " + z + " - " + Math.Round(ans28, 2) + Environment.NewLine;
                         doc2.InsertParagraph(s35);
                     }
                     else
@@ -439,7 +439,7 @@ namespace GenerationVariants
                         doc.InsertParagraph(s36);
                         double ans29;
                         ans29 = Combinations((int)kos2, (int)kos) * (double)Math.Pow(0.17, kos2) * (double)Math.Pow(0.83, kos - kos2);
-                        string s37 = "" + "Задание " + z + " - " + ans29 + Environment.NewLine;
+                        string s37 = "" + "Задание " + z + " - " + Math.Round(ans29, 2) + Environment.NewLine;
                         doc2.InsertParagraph(s37);
                     }
                 }
@@ -863,7 +863,7 @@ namespace GenerationVariants
                                 doc.InsertParagraph(s22);
                                 double ans22;
                                 ans22 = Combinations(f3, f2) * (double)Math.Pow(ff, ffff3) * (double)Math.Pow(raz1, raz);
-                                string s23 = "" + "Задание 8 - " + ans22 + Environment.NewLine;
+                                string s23 = "" + "Задание 8 - " + Math.Round(ans22, 2) + Environment.NewLine;
                                 doc2.InsertParagraph(s23);
                             }
                             else
@@ -878,7 +878,7 @@ namespace GenerationVariants
                                 doc.InsertParagraph(s24);
                                 double ans23;
                                 ans23 = (double)(Combinations(b4, b1 - b2) * Combinations(b3 - b4, b2)) / (Combinations(b3, b1));
-                                string s25 = "" + "Задание 8 - " + ans23 + Environment.NewLine;
+                                string s25 = "" + "Задание 8 - " + Math.Round(ans23, 2) + Environment.NewLine;
                                 doc2.InsertParagraph(s25);
                             }
 
@@ -897,7 +897,7 @@ namespace GenerationVariants
                                 doc.InsertParagraph(s26);
                                 double ans24;
                                 ans24 = (double)((v1 * 0.01) * (v4 * 0.01) + (v2 * 0.01) * (v5 * 0.01) + (v3 * 0.01) * (v6 * 0.01));
-                                string s27 = "" + "Задание 9 - " + ans24 + Environment.NewLine;
+                                string s27 = "" + "Задание 9 - " + Math.Round(ans24, 2) + Environment.NewLine;
                                 doc2.InsertParagraph(s27);
                             }
                             else
@@ -914,7 +914,7 @@ namespace GenerationVariants
                                 doc.InsertParagraph(s28);
                                 double ans25;
                                 ans25 = (double)(((v4 / (v4 + v5 + v6) * (v1)) + ((v5 / (v4 + v5 + v6)) * v2) + ((v6 / (v4 + v5 + v6)) * v3)));
-                                string s27 = "" + "Задание 9 - " + ans25 + Environment.NewLine;
+                                string s27 = "" + "Задание 9 - " + Math.Round(ans25, 2) + Environment.NewLine;
                                 doc2.InsertParagraph(s27);
                             }
 
@@ -927,7 +927,7 @@ namespace GenerationVariants
                                 doc.InsertParagraph(s30);
                                 double ans26;
                                 ans26 = (double)(0.66666 * (t1 * 0.01)) / (0.66666 * (t1 * 0.01) + 0.33333 * (t2 * 0.01));
-                                string s31 = "" + "Задание 10 - " + ans26 + Environment.NewLine;
+                                string s31 = "" + "Задание 10 - " + Math.Round(ans26, 2) + Environment.NewLine;
                                 doc2.InsertParagraph(s31);
                             }
                             else
@@ -940,7 +940,7 @@ namespace GenerationVariants
                                 doc.InsertParagraph(s32);
                                 double ans27;
                                 ans27 = (double)(((pr1 / 100) * pr3) / ((pr1 / 100) * pr3 + (1 - (pr1 / 100)) * pr2));
-                                string s33 = "" + "Задание 10 - " + ans27 + Environment.NewLine;
+                                string s33 = "" + "Задание 10 - " + Math.Round(ans27, 3) + Environment.NewLine;
                                 doc2.InsertParagraph(s33);
                             }
 
@@ -954,7 +954,7 @@ namespace GenerationVariants
                                 doc.InsertParagraph(s34);
                                 double ans28;
                                 ans28 = Combinations(y2 - y3, y2) * (double)Math.Pow(y1, y2 - y3) * (double)Math.Pow(1 - y1, y3);
-                                string s35 = "" + "Задание 11 - " + ans28 + Environment.NewLine;
+                                string s35 = "" + "Задание 11 - " + Math.Round(ans28, 3) + Environment.NewLine;
                                 doc2.InsertParagraph(s35);
                             }
                             else
@@ -967,7 +967,7 @@ namespace GenerationVariants
                                 doc.InsertParagraph(s36);
                                 double ans29;
                                 ans29 = Combinations((int)kos2, (int)kos) * (double)Math.Pow(0.17, kos2) * (double)Math.Pow(0.83, kos - kos2);
-                                string s37 = "" + "Задание 11 -" + ans29 + Environment.NewLine;
+                                string s37 = "" + "Задание 11 -" + Math.Round(ans29, 2) + Environment.NewLine;
                                 doc2.InsertParagraph(s37);
                             }
 
