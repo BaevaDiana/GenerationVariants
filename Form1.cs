@@ -36,17 +36,17 @@ namespace GenerationVariants
         }
         private void generateButton_Click(object sender, EventArgs e)
         {
-            string fileName = @"C:\Users\Дианочка\source\repos\GenerationVariants\ex.docx";
-            string fileName2 = @"C:\Users\Дианочка\source\repos\GenerationVariants\ans.docx";
+            string fileName = @"C:\Users\Кристина\source\repos\GenerationVariants\ex.docx";
+            string fileName2 = @"C:\Users\Кристина\source\repos\GenerationVariants\ans.docx";
             var doc = DocX.Create(fileName);
             var doc2 = DocX.Create(fileName2);
-            Xceed.Document.NET.Image img1 = doc.AddImage(@"C:\Users\Дианочка\source\repos\GenerationVariants\table1.PNG");
+            Xceed.Document.NET.Image img1 = doc.AddImage(@"C:\Users\Кристина\source\repos\GenerationVariants\table1.PNG");
             Xceed.Document.NET.Picture pp1 = img1.CreatePicture();
-            Xceed.Document.NET.Image img2 = doc.AddImage(@"C:\Users\Дианочка\source\repos\GenerationVariants\table2.PNG");
+            Xceed.Document.NET.Image img2 = doc.AddImage(@"C:\Users\Кристина\source\repos\GenerationVariants\table2.PNG");
             Xceed.Document.NET.Picture pp2= img2.CreatePicture();
-            Xceed.Document.NET.Image img11 = doc2.AddImage(@"C:\Users\Дианочка\source\repos\GenerationVariants\table1.PNG");
+            Xceed.Document.NET.Image img11 = doc2.AddImage(@"C:\Users\Кристина\source\repos\GenerationVariants\table1.PNG");
             Xceed.Document.NET.Picture ppp1 = img11.CreatePicture();
-            Xceed.Document.NET.Image img22 = doc2.AddImage(@"C:\Users\Дианочка\source\repos\GenerationVariants\table2.PNG");
+            Xceed.Document.NET.Image img22 = doc2.AddImage(@"C:\Users\Кристина\source\repos\GenerationVariants\table2.PNG");
             Xceed.Document.NET.Picture ppp2 = img22.CreatePicture();
             int k, z;
             Random random = new Random();
@@ -98,7 +98,7 @@ namespace GenerationVariants
                         w1 = random.Next(2, 16);//женшин в группе
                         g = random.Next(2, m1 + w1);//группа для ужина
                         w2 = random.Next(2, w1);//в группе2 женщин
-                        m2 = random.Next(2, m1);//в группе2 мужчин
+                        m2 = g-w2;//в группе2 мужчин
                         string s5 = "" + z + ")Группа туристов из " + m1 + " юношей и " + w1 + " девушек выбирает по жребию " + g + " человек(-a) для приготовления ужина. Сколько существует способов, при которых в эту группу попадут " + w2 + " девушек или " + m2 + " юношей?" + Environment.NewLine;
                         doc.InsertParagraph(s5);
                         double ans5;
@@ -590,243 +590,190 @@ namespace GenerationVariants
                         double d1; int d2;
                         d1 = Math.Round(random.NextDouble() * 1, 1);
                         d2 = random.Next(15, 75);
-                        string s54 = "" + z + ")Вероятность получения студентом отличной оценки на экзамене равна " + d1 + ". Найти наивероятнейшее число отличных оценок и вероятность этого числа, если число студентов, сдающих экзамен равно " + d2 + "." + Environment.NewLine;
+                        string s54 = "" + z + ")Вероятность получения студентом отличной оценки на экзамене равна " + d1 + ". Найти наивероятнейшее число отличных оценок , если число студентов, сдающих экзамен равно " + d2 + "." + Environment.NewLine;
                         doc.InsertParagraph(s54);
                         double ans38, ans39;
-                        ans38 = d1 * 0.01; ans39 = ans38 - 1;
+                        ans38 = (d2 + 1) * d1 - 1; ans39 = ans38 + 1;
                         string s55 = "" + "Задание " + z + "- " + ans39 + "<=k0<=" + ans38 + Environment.NewLine;
                         doc2.InsertParagraph(s55);
                     }
                     else
                     {
-                        //место для задачи партнера-Кристины!
-                        //string s44,45 ans 31
+                        double ra1; double ra2;
+                        ra1 = Math.Round(random.NextDouble() * 0.95, 2);//p
+                        ra2 = random.Next(50, 250);//n
+                        string s56 = "" + z + ")Вероятность того, что автомат при опускании одной монеты правильно сработает, равна " + ra1 + ". Найти наиболее вероятное число случаев неправильной работы автомата , если будет опущено " + ra2 + " монет. " + Environment.NewLine;
+                        doc.InsertParagraph(s56);
+                        double ans40, ans41;
+                        ans40 = ra1 * ra2 - (1 - ra1); ans41 = ra1 * ra2 + ra1;
+                        string s57 = "" + "Задание " + z + "- " + ans40 + "<=k0<=" + ans41 + Environment.NewLine;
+                        doc2.InsertParagraph(s57);
                     }
                 }
-                Xceed.Document.NET.Paragraph par1 = doc.InsertParagraph("Таблица значений функций ф(Х):");
-                par1.AppendPicture(pp1);
-                Xceed.Document.NET.Paragraph par2 = doc.InsertParagraph("Таблица значений функций Ф(Х):");
-                par2.AppendPicture(pp2);
-                doc.InsertParagraph(Environment.NewLine);
-                doc.InsertParagraph(Environment.NewLine);
-                doc.InsertParagraph(Environment.NewLine);
-                doc.InsertParagraph(Environment.NewLine);
-                doc.InsertParagraph(Environment.NewLine);
-                Xceed.Document.NET.Paragraph parr1 = doc2.InsertParagraph("Таблица значений функций ф(Х):");
-                parr1.AppendPicture(ppp1);
-                Xceed.Document.NET.Paragraph parr2 = doc2.InsertParagraph("Таблица значений функций Ф(Х):");
-                parr2.AppendPicture(ppp2);
-            }
-            doc.Save();
-            doc2.Save();
-            Process.Start("WINWORD.EXE", fileName);
-            Process.Start("WINWORD.EXE", fileName2);
-
-        }
-
-        private void inputNumberOfVariants_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(Count.Text))
-            {
-                varPoint = "0";
-                MessageBox.Show("Ошибка.Введите количество вариантов!");
-            }
-            else
-            {
-                varPoint = "1";
-                n = Convert.ToInt32(Count.Text);
-            }
-        }
-
-        private void checkBox17_CheckedChanged(object sender, EventArgs e)
-        {
-            string fileName = @"C:\Users\Дианочка\source\repos\GenerationVariants\ex.docx";
-            string fileName2 = @"C:\Users\Дианочка\source\repos\GenerationVariants\ans.docx";
-            var doc = DocX.Create(fileName);
-            var doc2 = DocX.Create(fileName2);
-            Xceed.Document.NET.Image img1 = doc.AddImage(@"C:\Users\Дианочка\source\repos\GenerationVariants\table1.PNG");
-            Xceed.Document.NET.Picture pp1 = img1.CreatePicture();
-            Xceed.Document.NET.Image img2 = doc.AddImage(@"C:\Users\Дианочка\source\repos\GenerationVariants\table2.PNG");
-            Xceed.Document.NET.Picture pp2 = img2.CreatePicture();
-            Xceed.Document.NET.Image img11 = doc2.AddImage(@"C:\Users\Дианочка\source\repos\GenerationVariants\table1.PNG");
-            Xceed.Document.NET.Picture ppp1 = img11.CreatePicture();
-            Xceed.Document.NET.Image img22 = doc2.AddImage(@"C:\Users\Дианочка\source\repos\GenerationVariants\table2.PNG");
-            Xceed.Document.NET.Picture ppp2 = img22.CreatePicture();
-            int k;
-            Random random = new Random();
-            for (k = 1; k <= n; k++)
-            {
-                if (checkBox17.Checked == true)
-                {
-                    string s = "" + "Вариант №" + k + Environment.NewLine;
-                    doc.InsertParagraph(s);
-                    doc2.InsertParagraph(s);
+                    if (checkBox17.Checked == true)
                     {
-                        if (k % 2 != 0)
-                        {
-                            int h, i = 8;
-                            h = random.Next(2, 10);
-                            string s2 = "" + "1)Сколько имеется чисел c" + " " + h + " " + "знаками, все цифры у которых различны?" + Environment.NewLine;
-                            doc.InsertParagraph(s2);
-                            int ans = 9 * 9;
-                            while (h != 2)
+
+                            if (k % 2 != 0)
                             {
-                                ans *= i;
-                                i--;
-                                h--;
+                                int h, i = 8;
+                                h = random.Next(2, 10);
+                                string s2 = "" + "1)Сколько имеется чисел c" + " " + h + " " + "знаками, все цифры у которых различны?" + Environment.NewLine;
+                                doc.InsertParagraph(s2);
+                                int ans = 9 * 9;
+                                while (h != 2)
+                                {
+                                    ans *= i;
+                                    i--;
+                                    h--;
+                                }
+                                string s3 = "" + "Задание 1 " + " -" + ans + Environment.NewLine;
+                                doc2.InsertParagraph(s3);
                             }
-                            string s3 = "" + "Задание 1 " + " -" + ans + Environment.NewLine;
-                            doc2.InsertParagraph(s3);
-                        }
-                        else
-                        {
-                            double h1, p2;
-                            h1 = random.Next(2, 17);//этажи
-                            p2 = random.Next(2, 11);//люди
-                            string s4 = "" + "2)" + p2 + " человек(-a) вошли в лифт на 1-м этаже" + " дома с" + " " + h1 + " этажами. Сколькими способами пассажиры могут выйти из лифта на нужных этажах?" + Environment.NewLine;
-                            doc.InsertParagraph(s4);
-                            double ans1 = (int)Math.Pow(h1 - 1, p2);
-                            string s5 = "" + "Задание 2 - " + ans1 + Environment.NewLine;
-                            doc2.InsertParagraph(s5);
-                        }
-                    }
-
-                    {
-                        if (k % 2 != 0)
-                        {
-                            int m1, w1, m2, w2, g;
-                            m1 = random.Next(2, 16);//всего в группе мужчин
-                            w1 = random.Next(2, 16);//женшин в группе
-                            g = random.Next(2, m1 + w1);//группа для ужина
-                            w2 = random.Next(2, w1);//в группе2 женщин
-                            m2 = random.Next(2, m1);//в группе2 мужчин
-                            string s5 = "" + "2)Группа туристов из " + m1 + " юношей и " + w1 + " девушек выбирает по жребию " + g + " человек(-a) для приготовления ужина. Сколько существует способов, при которых в эту группу попадут " + w2 + " девушек или " + m2 + " юношей?" + Environment.NewLine;
-                            doc.InsertParagraph(s5);
-                            double ans5;
-                            ans5 = Combinations(w2, w1) + Combinations(m2, m1);
-                            string s6 = "" + "Задание 2 " + " - " + ans5 + Environment.NewLine;
-                            doc2.InsertParagraph(s6);
-                        }
-                        else
-                        {
-                            int m1, w1, w2, g;
-                            m1 = random.Next(2, 16);//всего деталей
-                            w1 = random.Next(2, m1);//бракованные
-                            g = random.Next(2, w1);//комплект
-                            w2 = random.Next(2, g);//бракованные выпадают
-                            string s7 = "" + "2)В ящике " + m1 + " детали(-ей), среди которых  " + w1 + " бракованных. Наудачу выбирается комплект из  " + g + " деталей. Сколько всего комплектов, в каждом из которых " + w2 + " детали(-ей) бракованные(-ых)?" + Environment.NewLine;
-                            doc.InsertParagraph(s7);
-                            double ans9;
-                            ans9 = Combinations(w2, w1) * Combinations(g - w2, m1 - w1);
-                            string s6 = "" + "Задание 2 " + " - " + ans9 + Environment.NewLine;
-                            doc2.InsertParagraph(s6);
-                        }
-                    }
-
-                    {
-                        if (k % 2 != 0)
-                        {
-                            int s1, s2;
-                            s1 = random.Next(2, 11);
-                            s2 = random.Next(2, s1);
-                            string s9 = "" + "3)В комнате имеется " + s1 + " стульев. Сколькими способами можно разместить на них " + s2 + " гостей?" + Environment.NewLine;
-                            doc.InsertParagraph(s9);
-                            int ans7 = 1, c = 0;
-                            while (c != s2)
+                            else
                             {
-                                ans7 *= s1;
-                                s1--;
-                                c++;
+                                double h1, p2;
+                                h1 = random.Next(2, 17);//этажи
+                                p2 = random.Next(2, 11);//люди
+                                string s4 = "" + "2)" + p2 + " человек(-a) вошли в лифт на 1-м этаже" + " дома с" + " " + h1 + " этажами. Сколькими способами пассажиры могут выйти из лифта на нужных этажах?" + Environment.NewLine;
+                                doc.InsertParagraph(s4);
+                                double ans1 = (int)Math.Pow(h1 - 1, p2);
+                                string s5 = "" + "Задание 2 - " + ans1 + Environment.NewLine;
+                                doc2.InsertParagraph(s5);
                             }
-                            string s10 = "" + "Задание 3 - " + ans7 + Environment.NewLine;
-                            doc2.InsertParagraph(s10);
-                        }
-                        else
-                        {
-                            int r; string l;
-                            r = random.Next(1, 4);
-                            if (r == 1) l = "КНИГА";
-                            else
-                                if (r == 2) l = "ВЕСНА";
-                            else
-                                l = "ЛЕКЦИЯ";
-                            string s11 = "" + "3)Сколько различных «слов» можно получить, переставляя буквы в слове " + l + "?" + Environment.NewLine;
-                            doc.InsertParagraph(s11);
-                            int ans8 = Factorial(5) / 1;
-                            string s12 = "" + "Задание 3 -" + ans8 + Environment.NewLine;
-                            doc2.InsertParagraph(s12);
-                        }
-                    }
 
-                    {
-                        if (k % 2 != 0)
-                        {
-                            int r1; string l;
-                            r1 = random.Next(1, 4);
-                            if (r1 == 1) l = "ПРОФЕССОР";
-                            else
-                                if (r1 == 2) l = "АВИАЛИНИЯ";
-                            else
-                                l = "БАДМИНТОН";
-                            string s13 = "" + "4)Сколько различных «слов» можно получить, переставляя буквы в слове " + l + "?" + Environment.NewLine;
-                            doc.InsertParagraph(s13);
-                            int ans10;
-                            if (r1 == 1) ans10 = 45360;
-                            else if (r1 == 2) ans10 = 30240;
-                            else ans10 = 181440;
-                            string s14 = "" + "Задание 4 -" + ans10 + Environment.NewLine;
-                            doc2.InsertParagraph(s14);
-                        }
-                        else
-                        {
-                            int r2; string l;
-                            r2 = random.Next(1, 4);
-                            if (r2 == 1) l = "ХОЛОДИЛЬНИК";
-                            else
-                                if (r2 == 2) l = "БАКАЛАВРИАТ";
-                            else
-                                l = "КАЛАМБУРНЫЙ";
-                            string s15 = "" + "4)Сколько различных «слов» можно получить, переставляя буквы в слове " + l + "?" + Environment.NewLine;
-                            doc.InsertParagraph(s15);
-                            int ans11;
-                            if (r2 == 1) ans11 = 9979200;
-                            else if (r2 == 2) ans11 = 1663200;
-                            else ans11 = 19958400;
-                            string s16 = "" + "Задание 4 - " + ans11 + Environment.NewLine;
-                            doc2.InsertParagraph(s16);
-                        }
-                    }
 
-                    {
-                        if (k % 2 != 0)
-                        {
-                            double t1, t2, t3;
-                            t1 = random.Next(3, 6);
-                            t2 = random.Next(3, 10);
-                            t3 = random.Next(1, (int)t2);
-                            string s13 = "" + "5)В контрольной работе будет " + t1 + " задач(-и) – по одной из каждой пройденной темы. Задачи будут взяты из общего списка по " + t2 + " задач(-и) в каждой теме, а всего было пройдено " + t1 + " тем(-ы). При подготовке к контрольной Вова решил только по " + t3 + " задач(-е) в каждой теме. Найдите общее число всех возможных вариантов контрольной работы." + Environment.NewLine;
-                            doc.InsertParagraph(s13);
-                            double ans12;
-                            ans12 = (int)Math.Pow(t2, t1);
-                            string s14 = "" + "Задание 5 - " + ans12 + Environment.NewLine;
-                            doc2.InsertParagraph(s14);
-                        }
-                        else
-                        {
-                            int g1;
-                            g1 = random.Next(4, 8);
-                            string s15 = "" + "5)В футбольном турнире участвуют несколько команд. Оказалось, что все они для трусов и футболок использовали " + g1 + " цвета(-ов), причем были представлены все возможные варианты. Сколько команд участвовали в турнире?" + Environment.NewLine;
-                            doc.InsertParagraph(s15);
-                            int ans13;
-                            ans13 = g1 * (g1 - 1);
-                            string s16 = "" + "Задание 5 - " + ans13 + Environment.NewLine;
-                            doc2.InsertParagraph(s16);
-                        }
-                    }
 
-                    {
-                        if (k % 2 != 0)
-                        {
+                            if (k % 2 != 0)
+                            {
+                                int m1, w1, m2, w2, g;
+                                m1 = random.Next(2, 16);//всего в группе мужчин
+                                w1 = random.Next(2, 16);//женшин в группе
+                                g = random.Next(2, m1 + w1);//группа для ужина
+                                w2 = random.Next(2, w1);//в группе2 женщин
+                                m2=g-w2;//в группе2 мужчин
+                                string s5 = "" + "2)Группа туристов из " + m1 + " юношей и " + w1 + " девушек выбирает по жребию " + g + " человек(-a) для приготовления ужина. Сколько существует способов, при которых в эту группу попадут " + w2 + " девушек или " + m2 + " юношей?" + Environment.NewLine;
+                                doc.InsertParagraph(s5);
+                                double ans5;
+                                ans5 = Combinations(w2, w1) + Combinations(m2, m1);
+                                string s6 = "" + "Задание 2 " + " - " + ans5 + Environment.NewLine;
+                                doc2.InsertParagraph(s6);
+                            }
+                            else
+                            {
+                                int m1, w1, w2, g;
+                                m1 = random.Next(2, 16);//всего деталей
+                                w1 = random.Next(2, m1);//бракованные
+                                g = random.Next(2, w1);//комплект
+                                w2 = random.Next(2, g);//бракованные выпадают
+                                string s7 = "" + "2)В ящике " + m1 + " детали(-ей), среди которых  " + w1 + " бракованных. Наудачу выбирается комплект из  " + g + " деталей. Сколько всего комплектов, в каждом из которых " + w2 + " детали(-ей) бракованные(-ых)?" + Environment.NewLine;
+                                doc.InsertParagraph(s7);
+                                double ans9;
+                                ans9 = Combinations(w2, w1) * Combinations(g - w2, m1 - w1);
+                                string s6 = "" + "Задание 2 " + " - " + ans9 + Environment.NewLine;
+                                doc2.InsertParagraph(s6);
+                            }
+
+                            if (k % 2 != 0)
+                            {
+                                int s1, s2;
+                                s1 = random.Next(2, 11);
+                                s2 = random.Next(2, s1);
+                                string s9 = "" + "3)В комнате имеется " + s1 + " стульев. Сколькими способами можно разместить на них " + s2 + " гостей?" + Environment.NewLine;
+                                doc.InsertParagraph(s9);
+                                int ans7 = 1, c = 0;
+                                while (c != s2)
+                                {
+                                    ans7 *= s1;
+                                    s1--;
+                                    c++;
+                                }
+                                string s10 = "" + "Задание 3 - " + ans7 + Environment.NewLine;
+                                doc2.InsertParagraph(s10);
+                            }
+                            else
+                            {
+                                int r; string l;
+                                r = random.Next(1, 4);
+                                if (r == 1) l = "КНИГА";
+                                else
+                                    if (r == 2) l = "ВЕСНА";
+                                else
+                                    l = "ЛЕКЦИЯ";
+                                string s11 = "" + "3)Сколько различных «слов» можно получить, переставляя буквы в слове " + l + "?" + Environment.NewLine;
+                                doc.InsertParagraph(s11);
+                                int ans8 = Factorial(5) / 1;
+                                string s12 = "" + "Задание 3 -" + ans8 + Environment.NewLine;
+                                doc2.InsertParagraph(s12);
+                            }
+
+
+
+                            if (k % 2 != 0)
+                            {
+                                int r1; string l;
+                                r1 = random.Next(1, 4);
+                                if (r1 == 1) l = "ПРОФЕССОР";
+                                else
+                                    if (r1 == 2) l = "АВИАЛИНИЯ";
+                                else
+                                    l = "БАДМИНТОН";
+                                string s13 = "" + "4)Сколько различных «слов» можно получить, переставляя буквы в слове " + l + "?" + Environment.NewLine;
+                                doc.InsertParagraph(s13);
+                                int ans10;
+                                if (r1 == 1) ans10 = 45360;
+                                else if (r1 == 2) ans10 = 30240;
+                                else ans10 = 181440;
+                                string s14 = "" + "Задание 4 -" + ans10 + Environment.NewLine;
+                                doc2.InsertParagraph(s14);
+                            }
+                            else
+                            {
+                                int r2; string l;
+                                r2 = random.Next(1, 4);
+                                if (r2 == 1) l = "ХОЛОДИЛЬНИК";
+                                else
+                                    if (r2 == 2) l = "БАКАЛАВРИАТ";
+                                else
+                                    l = "КАЛАМБУРНЫЙ";
+                                string s15 = "" + "4)Сколько различных «слов» можно получить, переставляя буквы в слове " + l + "?" + Environment.NewLine;
+                                doc.InsertParagraph(s15);
+                                int ans11;
+                                if (r2 == 1) ans11 = 9979200;
+                                else if (r2 == 2) ans11 = 1663200;
+                                else ans11 = 19958400;
+                                string s16 = "" + "Задание 4 - " + ans11 + Environment.NewLine;
+                                doc2.InsertParagraph(s16);
+                            }
+
+
+
+                            if (k % 2 != 0)
+                            {
+                                double t1, t2, t3;
+                                t1 = random.Next(3, 6);
+                                t2 = random.Next(3, 10);
+                                t3 = random.Next(1, (int)t2);
+                                string s13 = "" + "5)В контрольной работе будет " + t1 + " задач(-и) – по одной из каждой пройденной темы. Задачи будут взяты из общего списка по " + t2 + " задач(-и) в каждой теме, а всего было пройдено " + t1 + " тем(-ы). При подготовке к контрольной Вова решил только по " + t3 + " задач(-е) в каждой теме. Найдите общее число всех возможных вариантов контрольной работы." + Environment.NewLine;
+                                doc.InsertParagraph(s13);
+                                double ans12;
+                                ans12 = (int)Math.Pow(t2, t1);
+                                string s14 = "" + "Задание 5 - " + ans12 + Environment.NewLine;
+                                doc2.InsertParagraph(s14);
+                            }
+                            else
+                            {
+                                int g1;
+                                g1 = random.Next(4, 8);
+                                string s15 = "" + "5)В футбольном турнире участвуют несколько команд. Оказалось, что все они для трусов и футболок использовали " + g1 + " цвета(-ов), причем были представлены все возможные варианты. Сколько команд участвовали в турнире?" + Environment.NewLine;
+                                doc.InsertParagraph(s15);
+                                int ans13;
+                                ans13 = g1 * (g1 - 1);
+                                string s16 = "" + "Задание 5 - " + ans13 + Environment.NewLine;
+                                doc2.InsertParagraph(s16);
+                            }
+
+
+
                             if (k % 2 != 0)
                             {
                                 double h1;
@@ -869,9 +816,9 @@ namespace GenerationVariants
                                 string s19 = "" + "Задание 6 - " + "a)" + Math.Round(ans13, 2) + ";б)" + Math.Round(ans14, 2) + ";в)" + Math.Round(ans15, 2) + Environment.NewLine;
                                 doc2.InsertParagraph(s19);
                             }
-                        }
 
-                        {
+
+
                             if (k % 2 != 0)
                             {
                                 double p1, p2;
@@ -902,9 +849,9 @@ namespace GenerationVariants
                                 string s21 = "" + "Задание 7 - " + "a)" + ans19 + ";б)" + ans20 + ";в)" + ans21 + Environment.NewLine;
                                 doc2.InsertParagraph(s21);
                             }
-                        }
 
-                        {
+
+
                             if (k % 2 != 0)
                             {
                                 int f1, f2, f3;
@@ -934,9 +881,9 @@ namespace GenerationVariants
                                 string s25 = "" + "Задание 8 - " + ans23 + Environment.NewLine;
                                 doc2.InsertParagraph(s25);
                             }
-                        }
 
-                        {
+
+
                             if (k % 2 != 0)
                             {
                                 int v1, v2, v3, v4, v5, v6;
@@ -970,9 +917,7 @@ namespace GenerationVariants
                                 string s27 = "" + "Задание 9 - " + ans25 + Environment.NewLine;
                                 doc2.InsertParagraph(s27);
                             }
-                        }
 
-                        {
                             if (k % 2 != 0)
                             {
                                 int t1, t2;
@@ -998,9 +943,7 @@ namespace GenerationVariants
                                 string s33 = "" + "Задание 10 - " + ans27 + Environment.NewLine;
                                 doc2.InsertParagraph(s33);
                             }
-                        }
 
-                        {
                             if (k % 2 != 0)
                             {
                                 int y2, y3; double y1;
@@ -1027,9 +970,7 @@ namespace GenerationVariants
                                 string s37 = "" + "Задание 11 -" + ans29 + Environment.NewLine;
                                 doc2.InsertParagraph(s37);
                             }
-                        }
 
-                        {
                             if (k % 2 != 0)
                             {
                                 int u2, u3; double u1;
@@ -1060,73 +1001,67 @@ namespace GenerationVariants
                                 string s41 = "" + "Задание 12 - ф(" + Math.Round(vx, 2) + ")/" + Math.Round(ans31, 2) + Environment.NewLine;
                                 doc2.InsertParagraph(s41);
                             }
-                        }
-                    }
 
-                    {
-                        if (k % 2 != 0)
-                        {
-                            int a1, a2, a3;
-                            a1 = random.Next(5, 95);
-                            a2 = random.Next(2, 100);
-                            a3 = random.Next(2, a2);
-                            string s42 = "" + "13)На склад поступают изделия, из которых " + a1 + " оказываются высшего сорта. Найти вероятность того, что из " + a2 + " взятых наудачу не менее " + a3 + " изделий окажется высшего сорта" + Environment.NewLine;
-                            doc.InsertParagraph(s42);
-                            double ans32, ans33;
-                            double ll = (double)(a1 * 0.01);
-                            ans32 = (double)(((a3 - (ll * a2))) / (Math.Sqrt((double)(a3 * ll * (1 - ll)))));
-                            ans33 = (double)(((a3 - (ll * a2))) / (Math.Sqrt((double)(a3 * ll * (1 - ll)))));
-                            string s43 = "" + "Задание 13 - Ф(" + Math.Round(ans32, 2) + ")-Ф(" + Math.Round(ans33, 2) + ")" + Environment.NewLine;
-                            doc2.InsertParagraph(s43);
-                        }
-                        else
-                        {
+                            if (k % 2 != 0)
+                            {
+                                int a1, a2, a3;
+                                a1 = random.Next(5, 95);
+                                a2 = random.Next(2, 100);
+                                a3 = random.Next(2, a2);
+                                string s42 = "" + "13)На склад поступают изделия, из которых " + a1 + " оказываются высшего сорта. Найти вероятность того, что из " + a2 + " взятых наудачу не менее " + a3 + " изделий окажется высшего сорта" + Environment.NewLine;
+                                doc.InsertParagraph(s42);
+                                double ans32, ans33;
+                                double ll = (double)(a1 * 0.01);
+                                ans32 = (double)(((a3 - (ll * a2))) / (Math.Sqrt((double)(a3 * ll * (1 - ll)))));
+                                ans33 = (double)(((a3 - (ll * a2))) / (Math.Sqrt((double)(a3 * ll * (1 - ll)))));
+                                string s43 = "" + "Задание 13 - Ф(" + Math.Round(ans32, 2) + ")-Ф(" + Math.Round(ans33, 2) + ")" + Environment.NewLine;
+                                doc2.InsertParagraph(s43);
+                            }
+                            else
+                            {
 
-                            int a1, a2, a3, a4;
-                            a1 = random.Next(5, 95);//p
-                            a2 = random.Next(700, 1500);//n
-                            a3 = random.Next(200, a2 - 100);//a
-                            a4 = random.Next(a3 + 1, a2);//b
-                            string s44 = "" + "13)Всхожесть семян составляет " + a1 + "%. Какова вероятность того. Что из " + a2 + " посеянных семян взойдут от " + a3 + " до " + a4 + "?" + Environment.NewLine;
-                            doc.InsertParagraph(s44);
-                            double ans34, ans35;
-                            double ll = (double)(a1 * 0.01);
-                            ans34 = (double)(((a3 - (ll * a2))) / (double)(Math.Sqrt((double)(a2 * ll * (1 - ll)))));
-                            ans35 = (double)(((a4 - (ll * a2))) / (double)(Math.Sqrt((double)(a2 * ll * (1 - ll)))));
-                            string s45 = "" + "Задание 13 - Ф(" + Math.Round(ans34, 2) + ")-Ф(" + Math.Round(ans35, 2) + ")" + Environment.NewLine;
-                            doc2.InsertParagraph(s45);
-                        }
-                    }
+                                int a1, a2, a3, a4;
+                                a1 = random.Next(5, 95);//p
+                                a2 = random.Next(700, 1500);//n
+                                a3 = random.Next(200, a2 - 100);//a
+                                a4 = random.Next(a3 + 1, a2);//b
+                                string s44 = "" + "13)Всхожесть семян составляет " + a1 + "%. Какова вероятность того. Что из " + a2 + " посеянных семян взойдут от " + a3 + " до " + a4 + "?" + Environment.NewLine;
+                                doc.InsertParagraph(s44);
+                                double ans34, ans35;
+                                double ll = (double)(a1 * 0.01);
+                                ans34 = (double)(((a3 - (ll * a2))) / (double)(Math.Sqrt((double)(a2 * ll * (1 - ll)))));
+                                ans35 = (double)(((a4 - (ll * a2))) / (double)(Math.Sqrt((double)(a2 * ll * (1 - ll)))));
+                                string s45 = "" + "Задание 13 - Ф(" + Math.Round(ans34, 2) + ")-Ф(" + Math.Round(ans35, 2) + ")" + Environment.NewLine;
+                                doc2.InsertParagraph(s45);
+                            }
 
-                    {
-                        if (k % 2 != 0)
-                        {
-                            int s1; double s2, s3;
-                            s1 = random.Next(20, 401);
-                            s2 = Math.Round(random.NextDouble() * 1, 1);
-                            s3 = Math.Round(random.NextDouble() * 1, 2);
-                            string s46 = "" + "14)В автопарке имеется " + s1 + " автомобиль(-ей). Вероятность безотказной работы каждого из них равна " + s2 + ". С вероятностью " + s3 + " определить границы, в которых будет находиться доля безотказно работавших машин в определенный момент времени." + Environment.NewLine;
-                            doc.InsertParagraph(s46);
-                            double qq, ww, rr;
-                            qq = s1 * s2; ww = (double)((s3 + 1) / 2); rr = (double)Math.Sqrt((double)(s1 * s2 * (1 - s2)));
-                            string s47 = "" + "Задание 14 - " + qq + "-Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + "<=X<=" + Math.Round(qq, 2) + "+Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + Environment.NewLine;
-                            doc2.InsertParagraph(s47);
-                        }
-                        else
-                        {
-                            int j1; double j2, j3;//сколько
-                            j1 = random.Next(20, 401);
-                            j2 = Math.Round(random.NextDouble() * 1, 1);//вероятность общая
-                            j3 = Math.Round(random.NextDouble() * 1, 2);//граница
-                            string s48 = "" + "14)Вероятность выплавки стабильного сплава в дуговой вакуумной установке равна " + j2 + " в каждой отдельной плавке. Произведена(-о) " + j1 + " плавка(-ок). Найти вероятность того, что относительная частота выплавки стабильного сплава отклонится от вероятности не более чем на " + j3 + " ." + Environment.NewLine;
-                            doc.InsertParagraph(s48);
-                            double qq, ww, rr;
-                            qq = j1 * j2; ww = (double)((j3 + 1) / 2); rr = (double)Math.Sqrt((double)(j1 * j2 * (1 - j2)));
-                            string s49 = "" + "Задание 14 - " + qq + "-Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + "<=X<=" + Math.Round(qq, 2) + "+Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + Environment.NewLine;
-                            doc2.InsertParagraph(s49);
-                        }
-                    }
-                        {
+                            if (k % 2 != 0)
+                            {
+                                int s1; double s2, s3;
+                                s1 = random.Next(20, 401);
+                                s2 = Math.Round(random.NextDouble() * 1, 1);
+                                s3 = Math.Round(random.NextDouble() * 1, 2);
+                                string s46 = "" + "14)В автопарке имеется " + s1 + " автомобиль(-ей). Вероятность безотказной работы каждого из них равна " + s2 + ". С вероятностью " + s3 + " определить границы, в которых будет находиться доля безотказно работавших машин в определенный момент времени." + Environment.NewLine;
+                                doc.InsertParagraph(s46);
+                                double qq, ww, rr;
+                                qq = s1 * s2; ww = (double)((s3 + 1) / 2); rr = (double)Math.Sqrt((double)(s1 * s2 * (1 - s2)));
+                                string s47 = "" + "Задание 14 - " + qq + "-Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + "<=X<=" + Math.Round(qq, 2) + "+Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + Environment.NewLine;
+                                doc2.InsertParagraph(s47);
+                            }
+                            else
+                            {
+                                int j1; double j2, j3;//сколько
+                                j1 = random.Next(20, 401);
+                                j2 = Math.Round(random.NextDouble() * 1, 1);//вероятность общая
+                                j3 = Math.Round(random.NextDouble() * 1, 2);//граница
+                                string s48 = "" + "14)Вероятность выплавки стабильного сплава в дуговой вакуумной установке равна " + j2 + " в каждой отдельной плавке. Произведена(-о) " + j1 + " плавка(-ок). Найти вероятность того, что относительная частота выплавки стабильного сплава отклонится от вероятности не более чем на " + j3 + " ." + Environment.NewLine;
+                                doc.InsertParagraph(s48);
+                                double qq, ww, rr;
+                                qq = j1 * j2; ww = (double)((j3 + 1) / 2); rr = (double)Math.Sqrt((double)(j1 * j2 * (1 - j2)));
+                                string s49 = "" + "Задание 14 - " + qq + "-Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + "<=X<=" + Math.Round(qq, 2) + "+Ф(" + Math.Round(ww, 2) + ")*" + Math.Round(rr, 2) + Environment.NewLine;
+                                doc2.InsertParagraph(s49);
+                            }
+
                             if (k % 2 != 0)
                             {
                                 int x1, x3; double x2;
@@ -1157,28 +1092,35 @@ namespace GenerationVariants
                                 string s53 = "" + "Задание 15 - " + " ( " + Math.Round(stepen, 2) + " *e^(-" + Math.Round(lam2, 2) + "))/" + mfact2 + Environment.NewLine;
                                 doc2.InsertParagraph(s53);
                             }
-                        }
-                    
-                        {
+
                             if (k % 2 != 0)
                             {
+                                //16
                                 double d1; int d2;
-                                d1 = Math.Round(random.NextDouble() * 1, 1);
+                                d1 = Math.Round(random.NextDouble() * 0.9, 1);
                                 d2 = random.Next(15, 75);
                                 string s54 = "" + "16)Вероятность получения студентом отличной оценки на экзамене равна " + d1 + ". Найти наивероятнейшее число отличных оценок и вероятность этого числа, если число студентов, сдающих экзамен равно " + d2 + " ." + Environment.NewLine;
                                 doc.InsertParagraph(s54);
                                 double ans38, ans39;
-                                ans38 = d1 * 0.01; ans39 = ans38 - 1;
+                                ans38 = (d2 + 1) * d1 - 1; ans39 = ans38 + 1;
                                 string s55 = "" + "Задание 16 - " + ans39 + "<=k0<=" + ans38 + Environment.NewLine;
                                 doc2.InsertParagraph(s55);
                             }
                             else
                             {
-                                //место для задачи партнера-Кристины!
-                                //string s44,45 ans 31
+                                double ra1; double ra2;
+                                ra1 = Math.Round(random.NextDouble() * 0.95, 2);//p
+                                ra2 = random.Next(50, 250);//n
+                                string s56 = "" + "16)Вероятность того, что автомат при опускании одной монеты правильно сработает, равна " + ra1 + ". Найти наиболее вероятное число случаев неправильной работы автомата , если будет опущено " + ra2 + " монет. " + Environment.NewLine;
+                                doc.InsertParagraph(s56);
+                                double ans40, ans41;
+                                ans40 = ra1 * ra2 - (1 - ra1); ans41 = ra1 * ra2 + ra1;
+                                string s57 = "" + "Задание 16" + "- " + ans40 + "<=k0<=" + ans41 + Environment.NewLine;
+                                doc2.InsertParagraph(s57);
                             }
                         }
-                }
+
+                
                 Xceed.Document.NET.Paragraph par1 = doc.InsertParagraph("Таблица значений функций ф(Х):");
                 par1.AppendPicture(pp1);
                 Xceed.Document.NET.Paragraph par2 = doc.InsertParagraph("Таблица значений функций Ф(Х):");
@@ -1197,6 +1139,22 @@ namespace GenerationVariants
             doc2.Save();
             Process.Start("WINWORD.EXE", fileName);
             Process.Start("WINWORD.EXE", fileName2);
+
+        }
+
+
+        private void inputNumberOfVariants_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Count.Text))
+            {
+                varPoint = "0";
+                MessageBox.Show("Ошибка.Введите количество вариантов!");
+            }
+            else
+            {
+                varPoint = "1";
+                n = Convert.ToInt32(Count.Text);
+            }
         }
     }
 }
