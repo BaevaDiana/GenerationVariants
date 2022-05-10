@@ -61,7 +61,7 @@ namespace GenerationVariants
             this.checkBox17.TabIndex = 46;
             this.checkBox17.Text = "Сгенерировать все задания";
             this.checkBox17.UseVisualStyleBackColor = true;
-            this.checkBox17.CheckedChanged += new System.EventHandler(this.checkBox17_CheckedChanged);
+            
             // 
             // textBox1
             // 
