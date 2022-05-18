@@ -170,6 +170,7 @@ namespace GenerationVariants
                 if (checkBox4.Checked == true)
                 {
                     z++;
+                 
                     if (k % 2 != 0)
                     {
                         int r1; string l;
@@ -360,9 +361,9 @@ namespace GenerationVariants
                     if (k % 2 != 0)
                     {
                         int v1, v2, v3, v4, v5, v6;
-                        v1 = random.Next(1, 50);//продукции с первой фабрики
+                        v1 = random.Next(1, 70);//продукции с первой фабрики
                         v2 = random.Next(1, (100 - v1)-10);//продукции со второй фабрики
-                        v3 = random.Next(1, (100 - v1 - v2));//продукции с третьей фабрики
+                        v3 = (100 - v1 - v2);//продукции с третьей фабрики
                         v4 = random.Next(1, 30);//процент нестандартных с первой фабрики
                         v5 = random.Next(1, v4);//процент нестандартных со второй фабрики
                         v6 = random.Next(1, v5);//процент нестандартных с третьей фабрики
@@ -618,6 +619,7 @@ namespace GenerationVariants
                         string s57 = "" + "Задание " + z + "- (" + ans40 + "<=k0<=" + ans41 +")"+ Environment.NewLine;
                         doc2.InsertParagraph(s57);
                     }
+     
                 }
                 if (checkBox17.Checked == true)
                 {
@@ -897,9 +899,9 @@ namespace GenerationVariants
                             if (k % 2 != 0)
                             {
                                 int v1, v2, v3, v4, v5, v6;
-                        v1 = random.Next(1, 50);//продукции с первой фабрики
+                        v1 = random.Next(1, 70);//продукции с первой фабрики
                         v2 = random.Next(1, (100 - v1) - 10);//продукции со второй фабрики
-                        v3 = random.Next(1, (100 - v1 - v2));//продукции с третьей фабрики
+                        v3 = (100 - v1 - v2);//продукции с третьей фабрики
                         v4 = random.Next(1, 30);//процент нестандартных с первой фабрики
                         v5 = random.Next(1, v4);//процент нестандартных со второй фабрики
                         v6 = random.Next(1, v5);//процент нестандартных с третьей фабрики
@@ -1110,7 +1112,7 @@ namespace GenerationVariants
                         double d1; int d2;
                         d1 = Math.Round(random.NextDouble() * 0.9, 1);
                         d2 = random.Next(15, 75);
-                        string s54 = "" + "16)Вероятность получения студентом отличной оценки на экзамене равна " + d1 + ". Найти наивероятнейшее число отличных оценок и вероятность этого числа, если число студентов, сдающих экзамен равно " + d2 + " ." + Environment.NewLine;
+                        string s54 = "" + "16)Вероятность получения студентом отличной оценки на экзамене равна " + d1 + ". Найти наивероятнейшее число отличных оценок, если число студентов, сдающих экзамен равно " + d2 + " ." + Environment.NewLine;
                         doc.InsertParagraph(s54);
                         double ans38, ans39;
                         ans38 = (d2 + 1) * d1 - 1; ans39 = ans38 + 1;
@@ -1129,6 +1131,7 @@ namespace GenerationVariants
                         string s57 = "" + "Задание 16" + "- (" + ans40 + "<=k0<=" + ans41 +")"+ Environment.NewLine;
                         doc2.InsertParagraph(s57);
                     }
+                
                 }
 
 
@@ -1146,6 +1149,8 @@ namespace GenerationVariants
                 Xceed.Document.NET.Paragraph parr2 = doc2.InsertParagraph("Таблица значений функций Ф(Х):");
                 parr2.AppendPicture(ppp2);
                 doc.InsertParagraph(Environment.NewLine);
+                doc.InsertParagraph("").InsertPageBreakAfterSelf();
+                doc2.InsertParagraph("").InsertPageBreakAfterSelf();
             }
             doc.Save();
             doc2.Save();
@@ -1153,8 +1158,6 @@ namespace GenerationVariants
             //Process.Start("WINWORD.EXE", fileName2);
 
         }
-
-
         private void inputNumberOfVariants_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Count.Text))
